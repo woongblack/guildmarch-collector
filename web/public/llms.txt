@@ -1,0 +1,191 @@
+# Guild March
+
+> Free, unofficial weekly guild rankings for World of Warcraft: Forever. Add a guild by name and the site scores its members' levels, achievements and honorable kills each week, ranks it in a small, medium or large league by score per active member, and gives it a tier and land on a territory map. In Korean, English and Traditional Chinese.
+
+Information as of 2026-11-24. Guild March is a fan site and isn't affiliated with Blizzard Entertainment. All game data comes from the public Blizzard Battle.net API.
+
+## About
+
+- What it does: weekly scores, league ranks, tiers, badges and a territory map for registered WoW: Forever guilds
+- Who it's for: WoW: Forever guilds and players in four regions (Korea, Taiwan, Americas, Europe) on PvP and Normal realms
+- Adding a guild: region, ruleset, faction and guild name. No login, free, and you don't have to be the guild master. Scoring starts on the Thursday after registering
+- Daily update: once a day at 08:00 Korea time (23:00 UTC), rosters and member profiles are read from the Battle.net API, ranks are worked out again and the site is rebuilt. Characters still logged in show up after they log out
+- Weekly reset: a week closes and the next one starts on Thursday at 08:00 Korea time (Wednesday 23:00 UTC), the same moment in every region. Week one started on November 19, 2026 and closes on November 26, 2026
+- Score: 1 point per level gained (up to 20 per character a week), 10 for reaching level 60 (once per character), 5 per achievement (no cap) and 1 per 10 honorable kills (up to 10 per character a week). Dungeons and raids don't count yet
+- Who counts: members on the guild roster at level 10 or higher when the week starts. Active members are those who log in at least once that week
+- Leagues: 5 to 19 active members play in the small league, 20 to 49 in the medium league, 50 or more in the large league. Fewer than 5 isn't ranked that week. A region's PvP and Normal realm guilds share the same leagues
+- Rank: within a league, total points divided by active members (score per member), highest first; ties share a rank
+- Tiers: when a week closes, each ranked guild gets one of nine tiers from its position in the league, (rank − 0.5) ÷ guilds. Top 5% Overlord, 12% Castellan, 22% Banner Captain, 34% Breaker II, 46% Breaker I, 58% Vanguard II, 70% Vanguard I, 85% Banner Bearer II, every other ranked guild Banner Bearer I. A league winner gets at least Castellan. The cut-offs are a draft
+- Badges: first, second and third in the league, top three three weeks running, biggest climb (at least 2 places), first time ranked, and top level, achievement and honor points per member
+- Territory map: one per region and ruleset, 1,994 cells in 37 regions. When a week closes, ranked guilds march by their tier to claim and take land; a guild holding more than half of a region is its lord. A season is four weeks, then the map is cleared. The first season closes on December 17, 2026, at 08:00 Korea time
+- Guild pages (/{lang}/guild/{region}/{id}/): this week's rank and score breakdown, a short written summary (roster, league position, level spread against the region and ruleset, where the points came from), members by level, the guilds next to it in its league, each member's points, the week-by-week record, and a share card for recruiting posts
+- Discord weekly results: a guild can paste a channel webhook on its guild page; after each week closes the site posts that guild's rank, tier and badges to the channel. Up to 5 channels per guild, no pings
+- Live strip: the home page and the guild finder show the guilds people opened in the last 24 hours, and how many people are on the site when there are at least 3
+- Data reports: studies of WoW: Forever guild characters from the public API (levels, factions, honor kills, achievements, guild sizes), with totals only and no names. A population page with faction split and level spread is rebuilt every day, with one page per region and realm type (/{lang}/population/{region}-{ruleset}/, such as /en/population/us-pvp/ or /en/population/eu-pvp/)
+- Weekly war reports: after each week closes, a report per region with the week's numbers, the top three of each league, top tiers, the faction comparison and the territory changes
+- Privacy: no individual login times are shown; data for characters who leave a tracked roster is deleted within 30 days; anyone can ask for a character or guild to be removed. Page views are counted without cookies and without storing IP addresses (a daily, non-reversible hash), kept 35 days
+
+## English
+
+- [Ranks](https://guildmarch.com/en/): this week's guild ranks, last week's champions and how to join
+- [Ranks by region](https://guildmarch.com/en/ranks/): ranks, region lords and the faction comparison for each region and ruleset
+- [Territory map](https://guildmarch.com/en/map/): the land-grab map for each region and ruleset
+- [Find a guild](https://guildmarch.com/en/guilds/): registered guilds by region, ruleset and faction
+- [Factions](https://guildmarch.com/en/factions/): Horde vs Alliance among registered guilds
+- [Rules](https://guildmarch.com/en/guide/): the full scoring formula, leagues, badges, tiers, data sources and limits
+- [Add your guild](https://guildmarch.com/en/register/): register a guild by name
+- [Removal request](https://guildmarch.com/en/opt-out/): take a guild or character off the site
+- [Q&A](https://guildmarch.com/en/answers/): questions and answers about ranks, scores, leagues and the map
+- [Glossary](https://guildmarch.com/en/glossary/): exact meaning and numbers for each term
+- [Guild tiers](https://guildmarch.com/en/tiers/): the nine tiers and their cut-offs
+- [Badges and titles](https://guildmarch.com/en/badges/): weekly badges and season titles
+- [Population](https://guildmarch.com/en/population/): faction split, level spread, honor and activity of registered guilds' characters, updated daily
+- [Data reports](https://guildmarch.com/en/insights/): studies of WoW: Forever guild characters from public data
+- [Weekly war reports](https://guildmarch.com/en/reports/): each closed week per region: top guilds, tiers, factions and territory
+- [Past weeks](https://guildmarch.com/en/weeks/): final ranks of every closed week
+- [Find a character](https://guildmarch.com/en/characters/): look up a character's guild and what it added this week
+- [About](https://guildmarch.com/en/about/): who runs the site, data sources and scoring
+- [Contact](https://guildmarch.com/en/contact/): how to reach the operator
+- [Privacy](https://guildmarch.com/en/privacy/): what is stored and what isn't
+- [Terms](https://guildmarch.com/en/terms/): terms of use
+
+### Data reports
+
+- [WoW Forever leveling pace: how many levels 34,000 guild characters gained in three days](https://guildmarch.com/en/insights/leveling-pace-2026-11/)
+- [WoW Forever honorable kills: how many PvP and Normal realm characters actually got in three days](https://guildmarch.com/en/insights/honor-kills-2026-11/)
+- [WoW Forever achievements: how many each level band has, and how much of a guild's score they make](https://guildmarch.com/en/insights/achievements-2026-11/)
+- [Guild size and ranks: small, medium and large leagues across 433 guilds in week 1](https://guildmarch.com/en/insights/guild-size-and-leagues-2026-11/)
+- [PvP vs Normal realms: levels, factions and honor kills across 47,000 WoW Forever guild characters](https://guildmarch.com/en/insights/pvp-vs-normal-realms-2026-11/)
+- [A guild leader's week: using Guild March from the Thursday reset to the close](https://guildmarch.com/en/insights/guild-leader-week-2026-11/)
+- [Day 11 of WoW Forever: 30 recruiting guilds and 3,180 characters in numbers](https://guildmarch.com/en/insights/guild-survey-2026-11/)
+
+### Q&A
+
+- [How are WoW: Forever guilds ranked?](https://guildmarch.com/en/answers/how-ranking-works/)
+- [How can our guild raise its weekly score?](https://guildmarch.com/en/answers/raise-weekly-score/)
+- [Can a small guild finish first?](https://guildmarch.com/en/answers/small-guild-chance/)
+- [Do PvP and Normal realm guilds compete separately?](https://guildmarch.com/en/answers/pvp-vs-normal-realms/)
+- [How does the guild territory map work?](https://guildmarch.com/en/answers/territory-map/)
+- [How do we use our Guild March record in a recruiting post?](https://guildmarch.com/en/answers/recruiting-post/)
+- [Registration says our guild can't be found](https://guildmarch.com/en/answers/guild-not-found/)
+- [What happens if our guild is renamed or disbanded?](https://guildmarch.com/en/answers/guild-renamed-or-disbanded/)
+- [When does the weekly reset happen in each region?](https://guildmarch.com/en/answers/weekly-reset-times/)
+- [Why is there no cap on achievement points?](https://guildmarch.com/en/answers/no-achievement-cap/)
+- [How does a guild become a region lord?](https://guildmarch.com/en/answers/become-region-lord/)
+- [Why don't characters below level 10 count?](https://guildmarch.com/en/answers/below-level-10/)
+- [Our logged-in character's progress isn't showing](https://guildmarch.com/en/answers/logged-in-not-updated/)
+- [When do mid-week recruits start counting?](https://guildmarch.com/en/answers/mid-week-recruits/)
+- [What happens to our rank if a change in active members moves us to another league?](https://guildmarch.com/en/answers/league-change/)
+- [How do I remove my character from the ranks?](https://guildmarch.com/en/answers/remove-my-character/)
+- [Do the faction stats show server population?](https://guildmarch.com/en/answers/faction-stats-meaning/)
+- [Do dungeons and raids count toward the score?](https://guildmarch.com/en/answers/dungeons-and-raids/)
+
+## 한국어
+
+- [순위](https://guildmarch.com/ko/): 이번 주 길드 순위와 지난주 챔피언
+- [지역별 순위](https://guildmarch.com/ko/ranks/): 지역·룰셋별 순위, 지역 영주, 진영 비교
+- [영토 지도](https://guildmarch.com/ko/map/): 지역·룰셋별 길드 영토 지도
+- [길드 찾기](https://guildmarch.com/ko/guilds/): 등록 길드를 지역·룰셋·진영으로 찾기
+- [진영 통계](https://guildmarch.com/ko/factions/): 호드와 얼라이언스 주간 비교
+- [규칙 안내](https://guildmarch.com/ko/guide/): 점수 산식, 리그와 순위, 배지, 길드 등급, 데이터 출처와 한계
+- [길드 등록](https://guildmarch.com/ko/register/): 길드 이름으로 등록
+- [제외 요청](https://guildmarch.com/ko/opt-out/): 길드나 캐릭터를 순위에서 빼기
+- [질문과 답](https://guildmarch.com/ko/answers/): 순위·점수·리그·영토 지도에 관한 질문과 답
+- [용어사전](https://guildmarch.com/ko/glossary/): 용어별 정확한 뜻과 숫자
+- [길드 등급](https://guildmarch.com/ko/tiers/): 9개 등급과 기준
+- [배지와 칭호](https://guildmarch.com/ko/badges/): 주간 배지와 시즌 칭호
+- [WoW 포에버 인구](https://guildmarch.com/ko/population/): 등록 길드 캐릭터의 진영 비율, 레벨 분포, 명예와 접속, 매일 갱신
+- [데이터 리포트](https://guildmarch.com/ko/insights/): 공개 데이터로 본 포에버 길드 캐릭터 분석
+- [주간 전황 리포트](https://guildmarch.com/ko/reports/): 마감된 주차의 지역별 상위 길드, 등급, 진영, 영토
+- [주차별 결과](https://guildmarch.com/ko/weeks/): 마감된 모든 주차의 최종 순위
+- [캐릭터 찾기](https://guildmarch.com/ko/characters/): 캐릭터의 길드와 이번 주 기여 찾기
+- [사이트 소개](https://guildmarch.com/ko/about/): 운영자, 데이터 출처, 점수 방식
+- [연락처](https://guildmarch.com/ko/contact/): 운영자에게 연락하는 방법
+- [개인정보처리방침](https://guildmarch.com/ko/privacy/): 저장하는 것과 저장하지 않는 것
+- [이용약관](https://guildmarch.com/ko/terms/): 이용약관
+
+### 데이터 리포트
+
+- [포에버 레벨업 속도: 길드원 3만 4천 명은 3일 동안 몇 레벨 올렸나](https://guildmarch.com/ko/insights/leveling-pace-2026-11/)
+- [포에버 명예 킬: PvP 서버와 일반 서버에서 3일 동안 실제로 얼마나 쌓였나](https://guildmarch.com/ko/insights/honor-kills-2026-11/)
+- [포에버 업적: 레벨대별로 몇 개나 따고, 길드 점수에서 얼마나 차지하나](https://guildmarch.com/ko/insights/achievements-2026-11/)
+- [길드 크기와 순위: 1주차 433개 길드로 본 소·중·대 리그](https://guildmarch.com/ko/insights/guild-size-and-leagues-2026-11/)
+- [PvP 서버 vs 일반 서버: 포에버 길드원 4만 7천 명의 레벨·진영·명예 킬 비교](https://guildmarch.com/ko/insights/pvp-vs-normal-realms-2026-11/)
+- [길드장의 한 주: 목요일 초기화부터 마감까지 Guild March 쓰는 법](https://guildmarch.com/ko/insights/guild-leader-week-2026-11/)
+- [포에버 출시 11일차, 모집 중인 길드 30곳 · 3,180명 데이터로 본 현황](https://guildmarch.com/ko/insights/guild-survey-2026-11/)
+
+### 질문과 답
+
+- [WoW 포에버 길드 순위는 어떻게 정하나요?](https://guildmarch.com/ko/answers/how-ranking-works/)
+- [길드 주간 점수를 올리려면 무엇을 해야 하나요?](https://guildmarch.com/ko/answers/raise-weekly-score/)
+- [작은 길드도 1위를 할 수 있나요?](https://guildmarch.com/ko/answers/small-guild-chance/)
+- [PvP 서버와 일반 서버 길드는 따로 겨루나요?](https://guildmarch.com/ko/answers/pvp-vs-normal-realms/)
+- [길드 영토 지도는 어떻게 움직이나요?](https://guildmarch.com/ko/answers/territory-map/)
+- [길드 모집 글에 Guild March 기록을 어떻게 쓰나요?](https://guildmarch.com/ko/answers/recruiting-post/)
+- [등록할 때 길드를 찾지 못했다고 나와요](https://guildmarch.com/ko/answers/guild-not-found/)
+- [길드 이름이 바뀌거나 길드가 해체되면 어떻게 되나요?](https://guildmarch.com/ko/answers/guild-renamed-or-disbanded/)
+- [지역별 주간 초기화 시각은 언제인가요?](https://guildmarch.com/ko/answers/weekly-reset-times/)
+- [업적 점수에는 왜 상한이 없나요?](https://guildmarch.com/ko/answers/no-achievement-cap/)
+- [지역 영주가 되려면 어떻게 해야 하나요?](https://guildmarch.com/ko/answers/become-region-lord/)
+- [10레벨 미만 캐릭터는 왜 세지 않나요?](https://guildmarch.com/ko/answers/below-level-10/)
+- [접속 중인 캐릭터의 점수가 반영되지 않아요](https://guildmarch.com/ko/answers/logged-in-not-updated/)
+- [주중에 들어온 길드원은 언제부터 세나요?](https://guildmarch.com/ko/answers/mid-week-recruits/)
+- [활동 인원이 바뀌어 리그가 바뀌면 순위는 어떻게 되나요?](https://guildmarch.com/ko/answers/league-change/)
+- [내 캐릭터를 순위에서 빼려면 어떻게 하나요?](https://guildmarch.com/ko/answers/remove-my-character/)
+- [진영 통계는 서버 인구를 뜻하나요?](https://guildmarch.com/ko/answers/faction-stats-meaning/)
+- [던전과 레이드는 점수에 들어가나요?](https://guildmarch.com/ko/answers/dungeons-and-raids/)
+
+## 繁體中文
+
+- [排名](https://guildmarch.com/zh-tw/): 本週公會排名與上週冠軍
+- [各地區排名](https://guildmarch.com/zh-tw/ranks/): 各地區與規則的排名、地區領主、陣營比較
+- [領土地圖](https://guildmarch.com/zh-tw/map/): 各地區與規則的公會領土地圖
+- [尋找公會](https://guildmarch.com/zh-tw/guilds/): 依地區、規則與陣營尋找已登記公會
+- [陣營統計](https://guildmarch.com/zh-tw/factions/): 部落與聯盟每週比較
+- [規則說明](https://guildmarch.com/zh-tw/guide/): 計分公式、分組與排名、徽章、公會等級、資料來源與限制
+- [登記公會](https://guildmarch.com/zh-tw/register/): 以公會名稱登記
+- [移除申請](https://guildmarch.com/zh-tw/opt-out/): 將公會或角色從排名移除
+- [問與答](https://guildmarch.com/zh-tw/answers/): 關於排名、分數、分組與領土地圖的問答
+- [名詞解釋](https://guildmarch.com/zh-tw/glossary/): 各名詞的確切意思與數字
+- [公會等級](https://guildmarch.com/zh-tw/tiers/): 九個等級與門檻
+- [徽章與稱號](https://guildmarch.com/zh-tw/badges/): 每週徽章與賽季稱號
+- [WoW: Forever 人口](https://guildmarch.com/zh-tw/population/): 已登記公會角色的陣營比例、等級分布、榮譽與上線，每日更新
+- [數據報告](https://guildmarch.com/zh-tw/insights/): 以公開資料分析 Forever 公會角色
+- [每週戰況報告](https://guildmarch.com/zh-tw/reports/): 每個已結算週的各地區前幾名公會、等級、陣營與領土
+- [歷週結果](https://guildmarch.com/zh-tw/weeks/): 每個已結算週的最終排名
+- [尋找角色](https://guildmarch.com/zh-tw/characters/): 查詢角色所屬公會與本週貢獻
+- [關於本站](https://guildmarch.com/zh-tw/about/): 經營者、資料來源與計分方式
+- [聯絡方式](https://guildmarch.com/zh-tw/contact/): 如何聯絡經營者
+- [隱私權政策](https://guildmarch.com/zh-tw/privacy/): 保存與不保存的資料
+- [使用條款](https://guildmarch.com/zh-tw/terms/): 使用條款
+
+### 數據報告
+
+- [Forever 練等速度：3 萬 4 千名公會角色三天內升了幾級](https://guildmarch.com/zh-tw/insights/leveling-pace-2026-11/)
+- [Forever 榮譽擊殺：PvP 與一般伺服器的角色三天內實際累積了多少](https://guildmarch.com/zh-tw/insights/honor-kills-2026-11/)
+- [Forever 成就：各等級區間有幾個，佔公會分數多少](https://guildmarch.com/zh-tw/insights/achievements-2026-11/)
+- [公會規模與排名：第 1 週 433 個公會的小、中、大聯盟](https://guildmarch.com/zh-tw/insights/guild-size-and-leagues-2026-11/)
+- [PvP 伺服器 vs 一般伺服器：4 萬 7 千名 Forever 公會角色的等級、陣營與榮譽擊殺比較](https://guildmarch.com/zh-tw/insights/pvp-vs-normal-realms-2026-11/)
+- [會長的一週：從週四重置到結算，Guild March 使用指南](https://guildmarch.com/zh-tw/insights/guild-leader-week-2026-11/)
+- [Forever 開服第 11 天：從 30 個招募中公會、3,180 名角色看現況](https://guildmarch.com/zh-tw/insights/guild-survey-2026-11/)
+
+### 問與答
+
+- [WoW: Forever 公會排名是怎麼決定的？](https://guildmarch.com/zh-tw/answers/how-ranking-works/)
+- [公會每週分數要怎麼提高？](https://guildmarch.com/zh-tw/answers/raise-weekly-score/)
+- [小公會也能拿第一嗎？](https://guildmarch.com/zh-tw/answers/small-guild-chance/)
+- [PvP 伺服器和一般伺服器的公會是分開比賽的嗎？](https://guildmarch.com/zh-tw/answers/pvp-vs-normal-realms/)
+- [公會領土地圖是怎麼運作的？](https://guildmarch.com/zh-tw/answers/territory-map/)
+- [要怎麼在公會招募文中使用 Guild March 的紀錄？](https://guildmarch.com/zh-tw/answers/recruiting-post/)
+- [登記時顯示找不到公會](https://guildmarch.com/zh-tw/answers/guild-not-found/)
+- [公會改名或解散會怎麼樣？](https://guildmarch.com/zh-tw/answers/guild-renamed-or-disbanded/)
+- [各地區的每週重置時間是什麼時候？](https://guildmarch.com/zh-tw/answers/weekly-reset-times/)
+- [成就分數為什麼沒有上限？](https://guildmarch.com/zh-tw/answers/no-achievement-cap/)
+- [要怎麼成為地區領主？](https://guildmarch.com/zh-tw/answers/become-region-lord/)
+- [為什麼不計算 10 級以下的角色？](https://guildmarch.com/zh-tw/answers/below-level-10/)
+- [正在遊戲中的角色分數沒有反映](https://guildmarch.com/zh-tw/answers/logged-in-not-updated/)
+- [週中加入的成員從什麼時候開始計算？](https://guildmarch.com/zh-tw/answers/mid-week-recruits/)
+- [活躍人數改變導致換組時，排名會怎麼樣？](https://guildmarch.com/zh-tw/answers/league-change/)
+- [要怎麼把我的角色從排名移除？](https://guildmarch.com/zh-tw/answers/remove-my-character/)
+- [陣營統計代表伺服器人口嗎？](https://guildmarch.com/zh-tw/answers/faction-stats-meaning/)
+- [地城與團隊副本會計入分數嗎？](https://guildmarch.com/zh-tw/answers/dungeons-and-raids/)

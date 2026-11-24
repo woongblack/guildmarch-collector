@@ -1,0 +1,3 @@
+# Cloudflare Pages: the bare address goes straight to the English site, so the browser never
+# loads the in-page fallback in app/(redirect)/ first
+/  /en/  302

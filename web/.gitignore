@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+# Local secrets for wrangler pages dev; real secrets live in the Cloudflare and GitHub settings
+.dev.vars
+.env*
+.wrangler
+# Site data from the daily export; real standings live in the DB, not in git
+/data/
+
+# The owner dashboard is built by the daily job, never committed
+ops/out

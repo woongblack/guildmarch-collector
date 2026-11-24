@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+.wrangler
+*.tsbuildinfo
+# Git-ignored too, so a local build matches what CI checks out
+next-env.d.ts
+# Exported at run time by the daily job, never baked into the image
+data
+# Secrets never enter the image; the deploy step passes the Cloudflare token at run time
+.dev.vars
+.env*
+# Original artwork; the site uses the resized copies in public/
+image-sources
+Dockerfile
+.dockerignore
