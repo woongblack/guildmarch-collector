@@ -1,0 +1,84 @@
+{
+  "surveyedAt": "2026-11-15T14:41:34.563Z",
+  "listed": 34,
+  "found": 30,
+  "notFound": 4,
+  "duplicates": 0,
+  "apiCalls": 8648,
+  "guildSize": {
+    "rosterMedian": 53.5,
+    "rosterBuckets": {
+      "1-9": 1,
+      "10-29": 6,
+      "30-59": 10,
+      "60-99": 4,
+      "100+": 9
+    },
+    "active7Median": 47.5,
+    "active7Buckets": {
+      "1-9": 1,
+      "10-29": 7,
+      "30-59": 11,
+      "60-99": 3,
+      "100+": 8
+    },
+    "activeShareMedian": 90.55
+  },
+  "factions": {
+    "horde": {
+      "guilds": 15,
+      "roster": 2030,
+      "active7": 1824
+    },
+    "alliance": {
+      "guilds": 15,
+      "roster": 1150,
+      "active7": 984
+    }
+  },
+  "rulesets": {
+    "pvp": {
+      "guilds": 21,
+      "activeHonorMedian": 1,
+      "activeHonorP90": 18,
+      "activeWithHonor": 56.7
+    },
+    "normal": {
+      "guilds": 5,
+      "activeHonorMedian": 0,
+      "activeHonorP90": 1,
+      "activeWithHonor": 10.4
+    }
+  },
+  "members": {
+    "total": 3180,
+    "below10": 8.7,
+    "levels": {
+      "60": 10,
+      "1-9": 276,
+      "10-19": 696,
+      "20-29": 986,
+      "30-39": 804,
+      "40-49": 324,
+      "50-59": 84
+    },
+    "activeLevels": {
+      "60": 10,
+      "1-9": 0,
+      "10-19": 636,
+      "20-29": 968,
+      "30-39": 794,
+      "40-49": 318,
+      "50-59": 82
+    },
+    "at60": 0.3,
+    "at60Active": 0.4,
+    "levelMedian": 26,
+    "activeLevelMedian": 27,
+    "active7": 88.3,
+    "active3": 83.4,
+    "achievementsMedian": 2,
+    "achievementsP90": 6,
+    "honorMedianActive": 1
+  }
+}
