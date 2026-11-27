@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,12 +6,19 @@ import { JsonLd } from "@/components/JsonLd";
 import { SiteShell } from "@/components/SiteShell";
 import { isLang, locales, t } from "@/lib/i18n";
 import { answerBySlug, answers, categoryOf } from "@/lib/answers";
+import { liveAnswer } from "@/lib/answers-live";
 import { pageMeta, pageName, SITE_URL } from "@/lib/site";
 
 // Answers about how ranks work, where a link to the ranks themselves helps most
 const RANK_QUESTIONS = new Set(["how-ranking-works", "small-guild-chance", "raise-weekly-score", "pvp-vs-normal-realms"]);
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
+
+// The answer's preview image (scripts/make_images.py), or the language's default until it's made
+const imageOf = (lang: string, slug: string) => {
+  const own = `/og/${lang}/answers/${slug}.jpg`;
+  return existsSync(`${process.cwd()}/public${own}`) ? own : `/og/default-${lang}.jpg`;
+};
 
 export const dynamicParams = false;
 
@@ -23,7 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = answerBySlug(slug);
   if (!isLang(lang) || !a) return {};
   const x = a.text[lang];
-  return pageMeta(lang, `/answers/${slug}/`, `${x.title} · ${t(lang).siteName}`, x.summary, { image: `/og/${lang}/answers/${slug}.jpg` });
+  const summary = liveAnswer(slug, lang)?.summary ?? x.summary;
+  return pageMeta(lang, `/answers/${slug}/`, `${x.title} · ${t(lang).siteName}`, summary, { image: imageOf(lang, slug) });
 }
 
 // The answer comes first in a short paragraph, so search and answer engines can quote it whole
@@ -33,9 +42,12 @@ export default async function AnswerPage({ params }: Props) {
   if (!isLang(lang) || !a) notFound();
   const dict = t(lang);
   const d = dict.answers;
-  const x = a.text[lang];
+  // Answers with figures (faction ratio, player count) open with the last update's numbers
+  const live = liveAnswer(slug, lang);
+  const x = live ? { ...a.text[lang], summary: live.summary, sections: [live.section, ...a.text[lang].sections] } : a.text[lang];
+  const modified = live?.asOf ?? a.updated;
   const url = `${SITE_URL}/${lang}/answers/${slug}/`;
-  const updated = new Intl.DateTimeFormat(locales[lang].intl, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(a.updated));
+  const updated = new Intl.DateTimeFormat(locales[lang].intl, { year: "numeric", month: "long", day: "numeric", timeZone: live ? locales[lang].zone : "UTC" }).format(new Date(modified));
 
   const ld = {
     "@context": "https://schema.org",
@@ -46,9 +58,9 @@ export default async function AnswerPage({ params }: Props) {
         description: x.summary,
         inLanguage: locales[lang].hreflang,
         datePublished: a.updated,
-        dateModified: a.updated,
+        dateModified: modified,
         mainEntityOfPage: url,
-        image: `${SITE_URL}/og/${lang}/answers/${slug}.jpg`,
+        image: `${SITE_URL}${imageOf(lang, slug)}`,
         author: { "@id": `${SITE_URL}/#org` },
         publisher: { "@id": `${SITE_URL}/#org` },
       },
@@ -80,7 +92,7 @@ export default async function AnswerPage({ params }: Props) {
           <img className="honor-image honor-small" src={`/images/glossary/cat-${categoryOf(slug)}-128.webp`} alt="" width={64} height={64} />
           <h1>{x.title}</h1>
           <p className="page-lead">{x.summary}</p>
-          <p className="answer-date"><time dateTime={a.updated}>{d.updated(updated)}</time></p>
+          <p className="answer-date"><time dateTime={modified}>{d.updated(updated)}</time></p>
           {/* People searching "guild ranks" land here; the ranks themselves are one click away */}
           {RANK_QUESTIONS.has(slug) && <p className="answer-cta"><Link className="btn" href={`/${lang}/`}>{d.seeRanks}</Link></p>}
         </div>

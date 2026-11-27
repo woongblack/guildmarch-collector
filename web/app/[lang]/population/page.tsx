@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { FactionSplit, pct } from "@/components/PopulationCharts";
 import { PageHead, SiteShell } from "@/components/SiteShell";
 import { isLang, locales, t } from "@/lib/i18n";
+import { answerBySlug } from "@/lib/answers";
 import { lastRun, population, regions } from "@/lib/data";
 import { pageMeta, SITE_URL } from "@/lib/site";
 import type { PopulationGroup } from "@/lib/site-data";
@@ -166,6 +167,9 @@ export default async function Population({ params }: Props) {
                     <li key={g.region + g.ruleset}>
                       <Link href={`/${lang}/population/${g.region}-${g.ruleset}/`}>{d.boardTitle(d.boardWhere(d.regionNames[g.region], dict.join.rulesets[g.ruleset]))}</Link>
                     </li>
+                  ))}
+                  {["horde-alliance-ratio", "player-count"].map((slug) => (
+                    <li key={slug}><Link href={`/${lang}/answers/${slug}/`}>{answerBySlug(slug)!.text[lang].title}</Link></li>
                   ))}
                 </ul>
               </section>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { answers } from "@/lib/answers";
+import { liveSlugs } from "@/lib/answers-live";
 import { insights } from "@/lib/insights";
 import { reportList, reportNotes } from "@/lib/report";
 import { guildsSample, population, boardIndexable, boards, closedWeeks, factions, guildIds, guildIndexable, isSample, lastRun, placeIndexable, sideIndexable } from "@/lib/data";
@@ -65,7 +66,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entry("/insights/", newest(insights.map((x) => x.updated ?? x.date))),
     ...insights.map((x) => entry(`/insights/${x.slug}/`, new Date(x.updated ?? x.date))),
     ...entry("/answers/", newest(answers.map((a) => a.updated))),
-    ...answers.map((a) => entry(`/answers/${a.slug}/`, new Date(a.updated))),
+    // Answers with figures change with each update
+    ...answers.map((a) => entry(`/answers/${a.slug}/`, liveSlugs.has(a.slug) && !isSample() ? run : new Date(a.updated))),
     ...fixed.map((p) => entry(p)),
   ].flat();
 }

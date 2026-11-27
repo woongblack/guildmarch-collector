@@ -695,4 +695,138 @@ export const extraAnswers: Answer[] = [
       },
     },
   },
+  // The two questions most searched for (site-watch, 2026-11): faction ratio and player count. The
+  // numbers come from the last update (lib/answers-live.ts adds them to the page); this text holds
+  // only what doesn't change between updates.
+  {
+    slug: "horde-alliance-ratio",
+    updated: "2026-11-28",
+    related: ["/population/", "/factions/"],
+    text: {
+      ko: {
+        title: "와우 포에버 호드와 얼라이언스 비율은 어떻게 되나요?",
+        summary: "Guild March는 등록 길드의 현재 길드원을 월·목요일마다 세어 지역과 서버 종류(PvP, 일반)별 호드와 얼라이언스 비율을 냅니다. 최신 비율은 인구 페이지에서 볼 수 있습니다. 서버 전체가 아니라 등록 길드 표본이라 실제 비율과 다를 수 있습니다.",
+        sections: [
+          { h: "비율은 어떻게 셌나요?", p: [
+            "Guild March에 등록된 길드의 현재 길드원 전체를 블리자드 공개 API로 읽고, 길드의 진영으로 호드와 얼라이언스를 나눕니다. 그래서 길드원이 많은 길드의 비중이 큽니다.",
+            "부캐도 한 명으로 셉니다. 길드가 없는 캐릭터와 등록하지 않은 길드는 빠지고, 제외를 요청한 길드도 뺍니다. 캐릭터가 100명 미만인 묶음은 숫자가 크게 흔들려 싣지 않습니다.",
+          ] },
+          { h: "PvP 서버와 일반 서버를 왜 따로 보나요?", p: [
+            "진영 간 전투가 있는 PvP 서버와 없는 일반 서버는 진영 쏠림이 다르게 나타날 수 있어 섞지 않고 따로 셉니다.",
+            "지역도 따로입니다. 한국, 대만, 북미, 유럽은 서로 다른 서버 묶음이라 한 지역의 비율이 다른 지역에 맞지 않습니다.",
+          ] },
+          { h: "진영 비교 페이지와는 무엇이 다른가요?", p: [
+            "이 비율은 사람 수입니다. 진영 비교 페이지는 그 주에 순위에 오른 길드의 활동 인원과 인원당 점수를 비교합니다. 사람이 많은 진영과 그 주에 더 잘한 진영은 다를 수 있습니다.",
+          ] },
+          { h: "비율은 언제 바뀌나요?", p: [
+            "월요일과 목요일 08:00(한국 시간)에 다시 셉니다. 새 길드가 등록되거나 길드원이 바뀌면 다음 갱신에 반영됩니다.",
+          ] },
+        ],
+      },
+      en: {
+        title: "What is the Horde vs Alliance ratio in WoW: Forever?",
+        summary: "Guild March counts the current members of registered guilds every Monday and Thursday and gives the Horde and Alliance share for each region and realm type (PvP, Normal). The latest shares are on the population page. It's a sample of registered guilds, not whole realms, so the real ratio can differ.",
+        sections: [
+          { h: "How is the ratio counted?", p: [
+            "Every current member of each guild registered on Guild March is read from Blizzard's public API and counted under the guild's faction, so large guilds weigh more.",
+            "Alts count as characters too. Characters without a guild and guilds that aren't registered are left out, as are guilds that asked to be removed. Groups under 100 characters aren't shown, since one guild would swing them.",
+          ] },
+          { h: "Why are PvP and Normal realms counted separately?", p: [
+            "Factions can lean differently on PvP realms, where the factions fight, than on Normal realms, so they're never mixed.",
+            "Regions are separate too. Korea, Taiwan, NA and EU are different sets of realms, so one region's ratio says nothing about another's.",
+          ] },
+          { h: "How is this different from the faction page?", p: [
+            "This ratio counts people. The faction page compares the active members and points per member of guilds ranked that week. The faction with more players isn't always the one that did better that week.",
+          ] },
+          { h: "When does the ratio change?", p: [
+            "It's counted again every Monday and Thursday at 08:00 KST (Sunday and Wednesday 3 PM PT). New guilds and roster changes show up at the next update.",
+          ] },
+        ],
+      },
+      "zh-tw": {
+        title: "WoW: Forever 部落與聯盟比例是多少？",
+        summary: "Guild March 每週一、週四統計已登記公會的現有成員，依地區與伺服器類型（PvP、一般）算出部落與聯盟的比例。最新比例請看人口頁面。這是已登記公會的樣本，不是整個伺服器，實際比例可能不同。",
+        sections: [
+          { h: "比例是怎麼算的？", p: [
+            "以暴雪公開 API 讀取 Guild March 已登記公會的所有現有成員，依公會陣營分成部落與聯盟，所以成員多的公會比重較大。",
+            "分身也算一名角色。沒有公會的角色、未登記的公會，以及申請移除的公會都不計入。角色未滿 100 名的組別數字波動太大，不予列出。",
+          ] },
+          { h: "為什麼 PvP 與一般伺服器分開看？", p: [
+            "有陣營戰鬥的 PvP 伺服器與一般伺服器，陣營偏向可能不同，所以不混在一起，分開計算。",
+            "地區也分開。韓服、台服、美服、歐服是不同的伺服器群，一個地區的比例不能套用到另一個地區。",
+          ] },
+          { h: "和陣營比較頁有什麼不同？", p: [
+            "這個比例是人數。陣營比較頁比較的是當週上榜公會的活躍人數與每人分數。人多的陣營不一定是當週表現較好的陣營。",
+          ] },
+          { h: "比例什麼時候更新？", p: [
+            "每週一、週四 07:00（台灣時間）重新統計。新登記的公會與成員變動會在下次更新時反映。",
+          ] },
+        ],
+      },
+    },
+  },
+  {
+    slug: "player-count",
+    updated: "2026-11-28",
+    related: ["/population/", "/characters/"],
+    text: {
+      ko: {
+        title: "와우 포에버 인구수는 몇 명인가요?",
+        summary: "블리자드는 WoW 포에버의 서버별 인구수를 공개하지 않아 정확한 전체 인구수는 알 수 없습니다. Guild March는 등록 길드의 캐릭터를 월·목요일마다 세어 지역별 인원과 레벨 분포를 보여 줍니다. 전체 인구가 아니라 그 일부를 센 숫자입니다.",
+        sections: [
+          { h: "Guild March의 숫자는 무엇을 센 건가요?", p: [
+            "Guild March에 등록된 길드의 현재 길드원을 블리자드 공개 API로 셉니다. 사람 수가 아니라 캐릭터 수라서 한 사람의 부캐도 따로 셉니다.",
+            "길드가 없는 캐릭터, 등록하지 않은 길드, 제외를 요청한 길드는 들어가지 않습니다. 그래서 실제 인구보다 적고, 활발한 길드 쪽으로 치우칩니다.",
+          ] },
+          { h: "10레벨 미만 캐릭터도 세나요?", p: [
+            "길드 명단에 있으면 인원과 레벨 분포에는 들어갑니다. 다만 10레벨 미만은 공개 프로필이 없어 명예 킬과 최근 접속 같은 항목에서는 빠집니다.",
+          ] },
+          { h: "다른 인구 사이트와 숫자가 왜 다른가요?", p: [
+            "사이트마다 세는 대상이 다릅니다. Guild March는 등록 길드의 명단만 셉니다. 다른 방식으로 센 숫자와는 크기가 다를 수 있으니, 같은 사이트 안에서 지역끼리, 주차끼리 비교하는 데 쓰는 게 좋습니다.",
+          ] },
+          { h: "숫자는 언제 바뀌나요?", p: [
+            "월요일과 목요일 08:00(한국 시간)에 다시 셉니다. 길드가 새로 등록될수록 표본이 커집니다.",
+          ] },
+        ],
+      },
+      en: {
+        title: "How many players does WoW: Forever have?",
+        summary: "Blizzard doesn't publish population numbers for WoW: Forever realms, so the exact total isn't known. Guild March counts the characters of registered guilds every Monday and Thursday and shows how many there are in each region and at which levels. It counts part of the population, not all of it.",
+        sections: [
+          { h: "What does Guild March count?", p: [
+            "The current members of guilds registered on Guild March, read from Blizzard's public API. It counts characters, not people, so one player's alts count separately.",
+            "Characters without a guild, guilds that aren't registered and guilds that asked to be removed aren't counted. So the number is lower than the real population and leans toward active guilds.",
+          ] },
+          { h: "Are characters under level 10 counted?", p: [
+            "They count toward totals and the level spread if they're on a guild roster. Characters under 10 have no public profile, though, so they're left out of honorable kills and recent logins.",
+          ] },
+          { h: "Why do other population sites show different numbers?", p: [
+            "Each site counts something different. Guild March counts only the rosters of registered guilds. Its numbers can be a different size from ones counted another way, so they're best for comparing regions or weeks with each other on this site.",
+          ] },
+          { h: "When do the numbers change?", p: [
+            "They're counted again every Monday and Thursday at 08:00 KST (Sunday and Wednesday 3 PM PT). The sample grows as more guilds register.",
+          ] },
+        ],
+      },
+      "zh-tw": {
+        title: "WoW: Forever 有多少玩家？",
+        summary: "暴雪沒有公布 WoW: Forever 各伺服器的人口數，所以無法得知確切的總人數。Guild March 每週一、週四統計已登記公會的角色，顯示各地區的人數與等級分布。這只是人口的一部分，不是全部。",
+        sections: [
+          { h: "Guild March 統計的是什麼？", p: [
+            "以暴雪公開 API 讀取 Guild March 已登記公會的現有成員。統計的是角色數不是人數，同一位玩家的分身會分開計算。",
+            "沒有公會的角色、未登記的公會，以及申請移除的公會都不計入。因此數字比實際人口少，也偏向活躍的公會。",
+          ] },
+          { h: "10 級以下的角色也算嗎？", p: [
+            "只要在公會名單上，就會計入人數與等級分布。但 10 級以下的角色沒有公開資料，所以不計入榮譽擊殺與最近登入。",
+          ] },
+          { h: "為什麼和其他人口網站的數字不同？", p: [
+            "每個網站統計的對象不同。Guild March 只統計已登記公會的名單。和其他方式算出的數字大小可能不同，比較適合在本站內比較地區之間或週次之間的變化。",
+          ] },
+          { h: "數字什麼時候更新？", p: [
+            "每週一、週四 07:00（台灣時間）重新統計。登記的公會越多，樣本就越大。",
+          ] },
+        ],
+      },
+    },
+  },
 ];

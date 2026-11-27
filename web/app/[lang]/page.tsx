@@ -43,7 +43,7 @@ export default async function Landing({ params }: { params: Promise<{ lang: stri
   // The newest reports, so the guides are one click from the home page
   const reports = [...insights].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
   // The questions people search for most, linked from the home page so they're found and crawled first
-  const questions = ["how-ranking-works", "small-guild-chance", "pvp-vs-normal-realms", "territory-map"].map(answerBySlug).filter((x) => x !== null);
+  const questions = ["how-ranking-works", "horde-alliance-ratio", "small-guild-chance", "player-count"].map(answerBySlug).filter((x) => x !== null);
   // The landing alternates between the two widest battle scenes, one per week
   const scene = week % 2 ? "fortress-gate-assault" : "valley-guild-war";
 

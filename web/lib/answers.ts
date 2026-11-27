@@ -429,7 +429,7 @@ export const answerCategories = [
   { id: "leagues-and-tiers", slugs: ["how-ranking-works", "small-guild-chance", "league-change", "pvp-vs-normal-realms"] },
   { id: "territory", slugs: ["territory-map", "become-region-lord"] },
   { id: "registration-and-removal", slugs: ["guild-not-found", "guild-renamed-or-disbanded", "remove-my-character", "recruiting-post"] },
-  { id: "data", slugs: ["weekly-reset-times", "mid-week-recruits", "faction-stats-meaning"] },
+  { id: "data", slugs: ["horde-alliance-ratio", "player-count", "weekly-reset-times", "mid-week-recruits", "faction-stats-meaning"] },
 ] as const;
 export type AnswerCategory = (typeof answerCategories)[number]["id"];
 export const categoryOf = (slug: string): AnswerCategory => answerCategories.find((c) => (c.slugs as readonly string[]).includes(slug))!.id;

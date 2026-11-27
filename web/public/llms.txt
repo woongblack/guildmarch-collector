@@ -70,6 +70,8 @@ Information as of 2026-11-24. Guild March is a fan site and isn't affiliated wit
 - [Registration says our guild can't be found](https://guildmarch.com/en/answers/guild-not-found/)
 - [What happens if our guild is renamed or disbanded?](https://guildmarch.com/en/answers/guild-renamed-or-disbanded/)
 - [When does the weekly reset happen in each region?](https://guildmarch.com/en/answers/weekly-reset-times/)
+- [What is the Horde vs Alliance ratio in WoW: Forever?](https://guildmarch.com/en/answers/horde-alliance-ratio/)
+- [How many players does WoW: Forever have?](https://guildmarch.com/en/answers/player-count/)
 - [Why is there no cap on achievement points?](https://guildmarch.com/en/answers/no-achievement-cap/)
 - [How does a guild become a region lord?](https://guildmarch.com/en/answers/become-region-lord/)
 - [Why don't characters below level 10 count?](https://guildmarch.com/en/answers/below-level-10/)
