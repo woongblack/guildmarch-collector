@@ -22,7 +22,8 @@ export function pageMeta(
   path: string,
   title: string,
   description: string,
-  opts: { noindex?: boolean; absoluteTitle?: boolean; image?: string } = {},
+  // article: dates of a dated article (the insights), the same strings as its Article JSON-LD
+  opts: { noindex?: boolean; absoluteTitle?: boolean; image?: string; article?: { published: string; modified?: string } } = {},
 ): Metadata {
   const url = `/${lang}${path}`;
   const image = ogImage(opts.image ?? `/og/default-${lang}.jpg`);
@@ -32,7 +33,9 @@ export function pageMeta(
     // hreflang only on indexable pages: an alternate set pointing at noindex pages sends mixed signals
     alternates: opts.noindex ? { canonical: url } : { canonical: url, languages: languageAlternates(path) },
     openGraph: {
-      type: "website",
+      ...(opts.article
+        ? { type: "article" as const, publishedTime: opts.article.published, modifiedTime: opts.article.modified ?? opts.article.published }
+        : { type: "website" as const }),
       url,
       title,
       description,
@@ -42,7 +45,8 @@ export function pageMeta(
       images: [image],
     },
     twitter: { card: "summary_large_image", title, description, images: [image.url] },
-    ...(opts.noindex ? { robots: { index: false, follow: true } } : {}),
+    // Indexed pages allow the large image preview: without it Discover and search show no big thumbnail
+    robots: opts.noindex ? { index: false, follow: true } : { "max-image-preview": "large" },
   };
 }
 

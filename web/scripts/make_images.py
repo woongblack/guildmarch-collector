@@ -6,6 +6,7 @@ Writes, under public/:
   og/{lang}/badges/{id}.jpg          one per weekly badge and season title
   og/{lang}/answers/{slug}.jpg       one per Q&A article
   og/{lang}/glossary/{slug}.jpg      one per glossary term
+  og/{lang}/insights/{slug}.jpg      one per data report and guide
   og/{lang}/map/{slug}.jpg           one per terrain region
   images/territory/regions/{slug}.webp   region highlighted on the map, for the region pages
 
@@ -120,7 +121,7 @@ def subject(path: Path, size: int) -> Image.Image:
     return im
 
 
-def card(fonts, lang, scene, kicker, title, sub, image: Path | None, out: Path):
+def card(fonts, lang, scene, kicker, title, sub, image: Path | None, out: Path, title_lines: int | None = None, floor: int = 42):
     im = backdrop(scene)
     draw = ImageDraw.Draw(im)
     frame(draw)
@@ -136,14 +137,16 @@ def card(fonts, lang, scene, kicker, title, sub, image: Path | None, out: Path):
         x = 470
     width = W - 80 - x
     kf = fonts.get(lang, 28, "SemiBold")
+    limit = title_lines or (2 if sub else 3)
     size = 68
     while True:
         tf = fonts.get(lang, size, "Bold")
-        lines = wrap(lang, title, tf, width, 3)
-        if len(lines) <= (2 if sub else 3) or size <= 42:
+        # One line over the limit, so a title that doesn't fit yet reads as too long instead of being cut
+        lines = wrap(lang, title, tf, width, limit + 1)
+        if len(lines) <= limit or size <= floor:
             break
         size -= 4
-    lines = wrap(lang, title, tf, width, 2 if sub else 3)
+    lines = wrap(lang, title, tf, width, limit)
     sf = fonts.get(lang, 28, "Regular")
     subs = wrap(lang, sub, sf, width, 3) if sub else []
     # Kicker, title and description as one block, centred in the space above the address
@@ -237,6 +240,10 @@ def main():
         for x in d["terms"]:
             card(fonts, lang, "lore-archive-raid", f"{d['siteName']} · {d['kickers']['glossary']}", x["title"], x["sub"],
                  SOURCES / f"glossary/{x['slug']}.png", og / lang / "glossary" / f"{x['slug']}.jpg")
+        for x in d["insights"]:
+            # Article titles are long: four lines and a smaller floor so none is cut
+            card(fonts, lang, "lore-archive-raid", f"{d['siteName']} · {d['kickers']['insights']}", x["title"], None,
+                 SOURCES / "glossary/categories/data.png", og / lang / "insights" / f"{x['slug']}.jpg", title_lines=4, floor=40)
         print(f"{lang}: cards done")
 
     art = Image.open(PUBLIC / "images/territory/azeroth-map.webp").convert("RGB")

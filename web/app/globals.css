@@ -417,6 +417,7 @@ html[lang="en"] .hero h1 { font-size: clamp(30px, 3.5vw, 46px); }
 .home-reports li a { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--gold); text-decoration: none; }
 .home-reports li a:hover { text-decoration: underline; }
 .home-reports li p { margin-top: 4px; font-size: 15px; line-height: 1.5; }
+.home-reports + .home-questions { margin-top: -40px; }
 
 /* Register */
 .join { max-width: 680px; margin: 0 auto 72px; padding: 44px 34px 28px; text-align: center; scroll-margin-top: 28px; }
@@ -822,6 +823,8 @@ html[lang="en"] .hero h1 { font-size: clamp(30px, 3.5vw, 46px); }
 .board-links h2 { font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--trim-bright); }
 .board-links ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 10px; font-size: 14px; }
 .board-links a, .board-hub a, .week-list a, .week-pager a, .answer-list a { color: var(--gold); text-underline-offset: 3px; }
+.board-links-inline { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 4px 0 18px; font-size: 14px; }
+.board-links-inline a { color: var(--gold); text-underline-offset: 3px; }
 .board-hub li, .week-list li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 12px 4px; border-bottom: 1px solid rgb(255 255 255 / .05); }
 .board-hub li span, .week-list li span { font-size: 14px; color: var(--text-dim); }
 .week-list { padding: 20px 24px; }

@@ -9,7 +9,7 @@ Information as of 2026-11-24. Guild March is a fan site and isn't affiliated wit
 - What it does: weekly scores, league ranks, tiers, badges and a territory map for registered WoW: Forever guilds
 - Who it's for: WoW: Forever guilds and players in four regions (Korea, Taiwan, Americas, Europe) on PvP and Normal realms
 - Adding a guild: region, ruleset, faction and guild name. No login, free, and you don't have to be the guild master. Scoring starts on the Thursday after registering
-- Daily update: once a day at 08:00 Korea time (23:00 UTC), rosters and member profiles are read from the Battle.net API, ranks are worked out again and the site is rebuilt. Characters still logged in show up after they log out
+- Data update: twice a week, Thursday (the weekly close) and Monday (mid-week standings) at 08:00 Korea time (23:00 UTC the day before), rosters and member profiles are read from the Battle.net API, ranks are worked out again and the site is rebuilt. Characters still logged in show up after they log out
 - Weekly reset: a week closes and the next one starts on Thursday at 08:00 Korea time (Wednesday 23:00 UTC), the same moment in every region. Week one started on November 19, 2026 and closes on November 26, 2026
 - Score: 1 point per level gained (up to 20 per character a week), 10 for reaching level 60 (once per character), 5 per achievement (no cap) and 1 per 10 honorable kills (up to 10 per character a week). Dungeons and raids don't count yet
 - Who counts: members on the guild roster at level 10 or higher when the week starts. Active members are those who log in at least once that week
@@ -21,7 +21,7 @@ Information as of 2026-11-24. Guild March is a fan site and isn't affiliated wit
 - Guild pages (/{lang}/guild/{region}/{id}/): this week's rank and score breakdown, a short written summary (roster, league position, level spread against the region and ruleset, where the points came from), members by level, the guilds next to it in its league, each member's points, the week-by-week record, and a share card for recruiting posts
 - Discord weekly results: a guild can paste a channel webhook on its guild page; after each week closes the site posts that guild's rank, tier and badges to the channel. Up to 5 channels per guild, no pings
 - Live strip: the home page and the guild finder show the guilds people opened in the last 24 hours, and how many people are on the site when there are at least 3
-- Data reports: studies of WoW: Forever guild characters from the public API (levels, factions, honor kills, achievements, guild sizes), with totals only and no names. A population page with faction split and level spread is rebuilt every day, with one page per region and realm type (/{lang}/population/{region}-{ruleset}/, such as /en/population/us-pvp/ or /en/population/eu-pvp/)
+- Data reports: studies of WoW: Forever guild characters from the public API (levels, factions, honor kills, achievements, guild sizes), with totals only and no names. A population page with faction split and level spread is rebuilt at each update, with one page per region and realm type (/{lang}/population/{region}-{ruleset}/, such as /en/population/us-pvp/ or /en/population/eu-pvp/)
 - Weekly war reports: after each week closes, a report per region with the week's numbers, the top three of each league, top tiers, the faction comparison and the territory changes
 - Privacy: no individual login times are shown; data for characters who leave a tracked roster is deleted within 30 days; anyone can ask for a character or guild to be removed. Page views are counted without cookies and without storing IP addresses (a daily, non-reversible hash), kept 35 days
 
@@ -39,7 +39,7 @@ Information as of 2026-11-24. Guild March is a fan site and isn't affiliated wit
 - [Glossary](https://guildmarch.com/en/glossary/): exact meaning and numbers for each term
 - [Guild tiers](https://guildmarch.com/en/tiers/): the nine tiers and their cut-offs
 - [Badges and titles](https://guildmarch.com/en/badges/): weekly badges and season titles
-- [Population](https://guildmarch.com/en/population/): faction split, level spread, honor and activity of registered guilds' characters, updated daily
+- [Population](https://guildmarch.com/en/population/): faction split, level spread, honor and activity of registered guilds' characters, updated twice a week
 - [Data reports](https://guildmarch.com/en/insights/): studies of WoW: Forever guild characters from public data
 - [Weekly war reports](https://guildmarch.com/en/reports/): each closed week per region: top guilds, tiers, factions and territory
 - [Past weeks](https://guildmarch.com/en/weeks/): final ranks of every closed week
@@ -94,7 +94,7 @@ Information as of 2026-11-24. Guild March is a fan site and isn't affiliated wit
 - [용어사전](https://guildmarch.com/ko/glossary/): 용어별 정확한 뜻과 숫자
 - [길드 등급](https://guildmarch.com/ko/tiers/): 9개 등급과 기준
 - [배지와 칭호](https://guildmarch.com/ko/badges/): 주간 배지와 시즌 칭호
-- [WoW 포에버 인구](https://guildmarch.com/ko/population/): 등록 길드 캐릭터의 진영 비율, 레벨 분포, 명예와 접속, 매일 갱신
+- [WoW 포에버 인구](https://guildmarch.com/ko/population/): 등록 길드 캐릭터의 진영 비율, 레벨 분포, 명예와 접속, 월·목요일 갱신
 - [데이터 리포트](https://guildmarch.com/ko/insights/): 공개 데이터로 본 포에버 길드 캐릭터 분석
 - [주간 전황 리포트](https://guildmarch.com/ko/reports/): 마감된 주차의 지역별 상위 길드, 등급, 진영, 영토
 - [주차별 결과](https://guildmarch.com/ko/weeks/): 마감된 모든 주차의 최종 순위
@@ -149,7 +149,7 @@ Information as of 2026-11-24. Guild March is a fan site and isn't affiliated wit
 - [名詞解釋](https://guildmarch.com/zh-tw/glossary/): 各名詞的確切意思與數字
 - [公會等級](https://guildmarch.com/zh-tw/tiers/): 九個等級與門檻
 - [徽章與稱號](https://guildmarch.com/zh-tw/badges/): 每週徽章與賽季稱號
-- [WoW: Forever 人口](https://guildmarch.com/zh-tw/population/): 已登記公會角色的陣營比例、等級分布、榮譽與上線，每日更新
+- [WoW: Forever 人口](https://guildmarch.com/zh-tw/population/): 已登記公會角色的陣營比例、等級分布、榮譽與上線，週一與週四更新
 - [數據報告](https://guildmarch.com/zh-tw/insights/): 以公開資料分析 Forever 公會角色
 - [每週戰況報告](https://guildmarch.com/zh-tw/reports/): 每個已結算週的各地區前幾名公會、等級、陣營與領土
 - [歷週結果](https://guildmarch.com/zh-tw/weeks/): 每個已結算週的最終排名

@@ -26,7 +26,7 @@ const ko: Record<PolicySlug, PolicyText> = {
         "큰 길드가 늘 이기지 않도록 활동 인원으로 리그를 나누고 인원당 점수로 겨룹니다. 순위에 따라 등급과 배지를 받고, 지역마다 영토 지도에서 땅을 넓히거나 빼앗깁니다. 자세한 규칙은 [규칙 안내](/guide/)에 모두 공개합니다.",
       ] },
       { h: "데이터는 어디서 오나", p: [
-        "모든 게임 데이터는 Blizzard Entertainment의 공개 API에서 하루 한 번(한국 시간 08:00) 읽어 옵니다. 길드원이 가입하거나 애드온을 설치할 필요가 없습니다.",
+        "모든 게임 데이터는 Blizzard Entertainment의 공개 API에서 일주일에 두 번(월·목요일 08:00, 한국 시간) 읽어 옵니다. 길드원이 가입하거나 애드온을 설치할 필요가 없습니다.",
         "공개 API가 주는 것만 씁니다. 접속 시각처럼 개인의 생활을 드러내는 정보는 보여 주지 않고, 데이터는 30일 안에 새로 고칩니다.",
       ] },
       { h: "누가 운영하나", p: [
@@ -65,7 +65,7 @@ const ko: Record<PolicySlug, PolicyText> = {
         "이 사이트에는 로그인이 없고, 방문자의 이메일, 계정, IP 주소를 저장하지 않습니다. 저장하는 것은 블리자드가 공개하는 게임 데이터와, 방문자가 양식에 적어 보낸 길드·캐릭터 이름, 디스코드 알림을 신청한 채널의 웹후크 주소, 그리고 IP를 되돌릴 수 없게 바꾼 익명 방문 기록뿐입니다.",
       ] },
       { h: "저장하는 정보", p: [
-        "공개 게임 데이터: 등록된 길드의 이름, 지역, 서버, 진영과 길드원 캐릭터의 이름, 레벨, 업적, 명예 킬, 마지막 접속 시각. 블리자드 공개 API에서 하루 한 번 읽어 순위 계산에 씁니다. 마지막 접속 시각은 최근 활동한 인원을 세는 데만 쓰고 화면에 보여 주지 않습니다.",
+        "공개 게임 데이터: 등록된 길드의 이름, 지역, 서버, 진영과 길드원 캐릭터의 이름, 레벨, 업적, 명예 킬, 마지막 접속 시각. 블리자드 공개 API에서 일주일에 두 번 읽어 순위 계산에 씁니다. 마지막 접속 시각은 최근 활동한 인원을 세는 데만 쓰고 화면에 보여 주지 않습니다.",
         "길드 등록 양식: 지역과 길드 이름(서버). 누가 등록했는지는 저장하지 않습니다.",
         "제외 요청 양식: 빼 달라는 길드나 캐릭터의 이름과 요청 시각. 연락처는 받지 않습니다.",
         "디스코드 알림: 채널의 웹후크 주소와 메시지 언어. 주간 결과를 보내는 데만 쓰고 공개하지 않습니다. 디스코드에서 웹후크를 지우면 다음 발송 때 함께 지웁니다.",
@@ -80,7 +80,7 @@ const ko: Record<PolicySlug, PolicyText> = {
         "Cloudflare: 사이트 전송, 보안(과도한 요청 차단), 방문 통계(Cloudflare Web Analytics). 통계는 쿠키를 쓰지 않고 개인을 구별하지 않는 합계로만 봅니다. 요청을 처리하는 동안 Cloudflare가 IP 주소를 다루지만 이 사이트는 그것을 저장하지 않습니다.",
         "Supabase: 게임 데이터와 양식 내용을 저장하는 데이터베이스.",
         "Google Fonts: 글꼴 파일을 Google 서버에서 받아 옵니다. 이때 브라우저가 Google에 접속합니다.",
-        "GitHub: 하루 한 번 데이터를 갱신하는 작업을 돌립니다. 방문자 정보는 다루지 않습니다.",
+        "GitHub: 일주일에 두 번 데이터를 갱신하는 작업을 돌립니다. 방문자 정보는 다루지 않습니다.",
       ] },
       { h: "쿠키와 광고", p: [
         "지금(" + POLICY_DATE + ") 이 사이트는 자체 쿠키를 쓰지 않고 광고도 없습니다.",
@@ -99,7 +99,7 @@ const ko: Record<PolicySlug, PolicyText> = {
     sections: [
       { h: "1. 비공식 사이트", p: ["Guild March는 개인이 운영하는 비공식 팬 사이트로 Blizzard Entertainment와 관계가 없습니다. 여기의 순위, 등급, 영토는 이 사이트가 정한 규칙의 결과이며 블리자드의 공식 기록이 아닙니다. World of Warcraft와 관련 이름은 Blizzard Entertainment의 상표입니다."] },
       { h: "2. 서비스", p: [
-        "블리자드 공개 데이터로 길드 점수와 순위를 계산해 보여 줍니다. 데이터는 하루 한 번 갱신되며, 블리자드 API의 지연이나 오류, 계산 규칙의 한계 때문에 틀리거나 늦을 수 있습니다.",
+        "블리자드 공개 데이터로 길드 점수와 순위를 계산해 보여 줍니다. 데이터는 일주일에 두 번(월·목요일) 갱신되며, 블리자드 API의 지연이나 오류, 계산 규칙의 한계 때문에 틀리거나 늦을 수 있습니다.",
         "규칙은 [규칙 안내](/guide/)에 공개하며, 공정성을 위해 바꿀 수 있습니다. 바꿀 때는 미리 알립니다. 운영자의 사정으로 서비스를 멈추거나 끝낼 수 있습니다.",
       ] },
       { h: "3. 등록과 제외", p: [
@@ -133,7 +133,7 @@ const en: Record<PolicySlug, PolicyText> = {
         "So that big guilds don't always win, guilds are grouped into leagues by active members and compete on score per member. Ranks earn tiers and badges, and on each region's territory map guilds gain or lose ground. Every rule is in the [Guide](/guide/).",
       ] },
       { h: "Where the data comes from", p: [
-        "All game data is read from Blizzard Entertainment's public API once a day (08:00 Korea time). Members don't sign up or install an addon.",
+        "All game data is read from Blizzard Entertainment's public API twice a week (Monday and Thursday, 08:00 Korea time). Members don't sign up or install an addon.",
         "We use only what the public API gives. We never show anything that reveals someone's daily life, such as when they log in, and we refresh the data within 30 days.",
       ] },
       { h: "Who runs it", p: [
@@ -172,7 +172,7 @@ const en: Record<PolicySlug, PolicyText> = {
         "There are no logins, and we don't store visitors' emails, accounts or IP addresses. We keep the game data Blizzard makes public, the guild or character names people send through our forms, the webhook URLs of Discord channels signed up for weekly results, and anonymous visit records that can't be turned back into an IP address. Nothing else.",
       ] },
       { h: "What we keep", p: [
-        "Public game data: for registered guilds, the name, region, realm and faction, and for their members' characters, the name, level, achievements, honor kills and last login time. Read once a day from Blizzard's public API to work out ranks. The last login time is used only to count recently active members and is never shown.",
+        "Public game data: for registered guilds, the name, region, realm and faction, and for their members' characters, the name, level, achievements, honor kills and last login time. Read twice a week from Blizzard's public API to work out ranks. The last login time is used only to count recently active members and is never shown.",
         "Guild registration form: the region and guild name (with realm). We don't record who registered it.",
         "Removal request form: the name of the guild or character to remove and when it was asked. No contact details.",
         "Discord results: the channel's webhook URL and message language. Used only to post weekly results and never shown. When the webhook is deleted in Discord, we delete it at the next post.",
@@ -187,7 +187,7 @@ const en: Record<PolicySlug, PolicyText> = {
         "Cloudflare: delivers the site, blocks excessive requests, and counts visits (Cloudflare Web Analytics). Analytics uses no cookies and shows only totals that don't single anyone out. Cloudflare handles IP addresses while serving requests; this site doesn't store them.",
         "Supabase: the database holding the game data and form entries.",
         "Google Fonts: font files load from Google's servers, so your browser connects to Google.",
-        "GitHub: runs the daily update job. It handles no visitor data.",
+        "GitHub: runs the data update job twice a week. It handles no visitor data.",
       ] },
       { h: "Cookies and advertising", p: [
         `As of ${POLICY_DATE} the site sets no cookies of its own and shows no ads.`,
@@ -206,7 +206,7 @@ const en: Record<PolicySlug, PolicyText> = {
     sections: [
       { h: "1. Unofficial site", p: ["Guild March is an unofficial fan site run by an individual and is not affiliated with Blizzard Entertainment. Its ranks, tiers and territory come from this site's own rules and are not official Blizzard records. World of Warcraft and related names are trademarks of Blizzard Entertainment."] },
       { h: "2. The service", p: [
-        "We work out guild scores and ranks from Blizzard's public data. Data updates once a day and can be wrong or late because of delays or errors in Blizzard's API or limits of our rules.",
+        "We work out guild scores and ranks from Blizzard's public data. Data updates twice a week (Monday and Thursday) and can be wrong or late because of delays or errors in Blizzard's API or limits of our rules.",
         "The rules are published in the [Guide](/guide/) and may change for fairness; we announce changes in advance. The operator may pause or end the service.",
       ] },
       { h: "3. Registering and removal", p: [
@@ -240,7 +240,7 @@ const zh: Record<PolicySlug, PolicyText> = {
         "為了不讓大公會永遠獲勝，我們依活躍人數分聯賽，以人均分數競爭。名次帶來等級與徽章，各地區的領土地圖上公會會擴張或失去土地。所有規則都公開在[規則說明](/guide/)。",
       ] },
       { h: "資料從哪裡來", p: [
-        "所有遊戲資料每天一次（韓國時間 08:00）從 Blizzard Entertainment 的公開 API 讀取。成員不需註冊，也不需安裝插件。",
+        "所有遊戲資料每週兩次（週一與週四，韓國時間 08:00）從 Blizzard Entertainment 的公開 API 讀取。成員不需註冊，也不需安裝插件。",
         "我們只使用公開 API 提供的資料。不顯示登入時間等透露個人生活的資訊，資料在 30 天內更新。",
       ] },
       { h: "誰在經營", p: [
@@ -279,7 +279,7 @@ const zh: Record<PolicySlug, PolicyText> = {
         "本站沒有登入功能，也不保存訪客的電子郵件、帳號或 IP 位址。保存的只有 Blizzard 公開的遊戲資料，訪客透過表單送出的公會或角色名稱，申請 Discord 通知的頻道 Webhook 網址，以及無法還原成 IP 的匿名造訪紀錄。",
       ] },
       { h: "保存的資訊", p: [
-        "公開遊戲資料：已登錄公會的名稱、地區、伺服器、陣營，以及成員角色的名稱、等級、成就、榮譽擊殺與最後登入時間。每天一次從 Blizzard 公開 API 讀取，用於計算名次。最後登入時間只用於計算近期活躍人數，絕不顯示。",
+        "公開遊戲資料：已登錄公會的名稱、地區、伺服器、陣營，以及成員角色的名稱、等級、成就、榮譽擊殺與最後登入時間。每週兩次從 Blizzard 公開 API 讀取，用於計算名次。最後登入時間只用於計算近期活躍人數，絕不顯示。",
         "公會登錄表單：地區與公會名稱（含伺服器）。不記錄是誰登錄的。",
         "移除申請表單：要移除的公會或角色名稱與申請時間。不收集聯絡方式。",
         "Discord 通知：頻道的 Webhook 網址與訊息語言。只用來發送每週結果，不會公開。在 Discord 刪除 Webhook 後，下次發送時會一併刪除。",
@@ -294,7 +294,7 @@ const zh: Record<PolicySlug, PolicyText> = {
         "Cloudflare：傳送網站、安全防護（阻擋過量請求）與造訪統計（Cloudflare Web Analytics）。統計不使用 Cookie，只看不會識別個人的總數。處理請求時 Cloudflare 會接觸 IP 位址，但本站不保存。",
         "Supabase：保存遊戲資料與表單內容的資料庫。",
         "Google Fonts：字型檔從 Google 伺服器載入，此時瀏覽器會連線到 Google。",
-        "GitHub：執行每日的資料更新工作，不處理訪客資訊。",
+        "GitHub：每週兩次執行資料更新工作，不處理訪客資訊。",
       ] },
       { h: "Cookie 與廣告", p: [
         `截至 ${POLICY_DATE}，本站不使用自己的 Cookie，也沒有廣告。`,
@@ -313,7 +313,7 @@ const zh: Record<PolicySlug, PolicyText> = {
     sections: [
       { h: "1. 非官方網站", p: ["Guild March 是由個人經營的非官方粉絲網站，與 Blizzard Entertainment 無關。本站的名次、等級與領土是依本站規則得出的結果，並非 Blizzard 的官方紀錄。World of Warcraft 及相關名稱為 Blizzard Entertainment 的商標。"] },
       { h: "2. 服務內容", p: [
-        "我們用 Blizzard 公開資料計算並顯示公會分數與名次。資料每天更新一次，可能因 Blizzard API 的延遲或錯誤、或本站規則的限制而有誤或延遲。",
+        "我們用 Blizzard 公開資料計算並顯示公會分數與名次。資料每週更新兩次（週一與週四），可能因 Blizzard API 的延遲或錯誤、或本站規則的限制而有誤或延遲。",
         "規則公開在[規則說明](/guide/)，為了公平可能調整，調整前會事先公告。經營者可能因故暫停或結束服務。",
       ] },
       { h: "3. 登錄與移除", p: [

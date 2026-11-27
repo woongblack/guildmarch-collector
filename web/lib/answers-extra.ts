@@ -73,11 +73,11 @@ export const extraAnswers: Answer[] = [
     text: {
       ko: {
         title: "길드 이름이 바뀌거나 길드가 해체되면 어떻게 되나요?",
-        summary: "매일 읽는 명단에서 길드를 찾지 못하면 \"길드를 찾을 수 없음\"으로 바뀝니다. 그 주는 주 시작 명단으로 순위를 유지하고, 다음 주부터 순위 밖이 되며 영토 지도의 땅은 모두 빈칸이 됩니다. 이름을 바꾼 길드는 새 이름으로 다시 등록하면 새 길드로 집계합니다.",
+        summary: "정기 갱신 때 읽는 명단에서 길드를 찾지 못하면 \"길드를 찾을 수 없음\"으로 바뀝니다. 그 주는 주 시작 명단으로 순위를 유지하고, 다음 주부터 순위 밖이 되며 영토 지도의 땅은 모두 빈칸이 됩니다. 이름을 바꾼 길드는 새 이름으로 다시 등록하면 새 길드로 집계합니다.",
         sections: [
           { h: "언제 '찾을 수 없음'으로 바뀌나요?", p: [
-            "길드는 등록할 때의 이름으로 공식 API에서 명단을 읽습니다. 이름이 바뀌었거나 해체되어 그 이름으로 명단이 나오지 않으면 다음 갱신(매일 08:00)부터 \"길드를 찾을 수 없음\"으로 표시합니다.",
-            "찾을 수 없는 길드도 매일 다시 확인합니다. 일시적인 문제였다면 명단이 다시 읽히는 날 원래 상태로 돌아옵니다.",
+            "길드는 등록할 때의 이름으로 공식 API에서 명단을 읽습니다. 이름이 바뀌었거나 해체되어 그 이름으로 명단이 나오지 않으면 다음 갱신(월·목요일 08:00)부터 \"길드를 찾을 수 없음\"으로 표시합니다.",
+            "찾을 수 없는 길드도 갱신 때마다 다시 확인합니다. 일시적인 문제였다면 명단이 다시 읽히는 갱신 때 원래 상태로 돌아옵니다.",
           ] },
           { h: "순위와 영토는 어떻게 되나요?", p: [
             "점수는 주가 시작될 때의 명단으로 셉니다. 그래서 주중에 해체돼도 그 주는 순위를 유지하고, 주 시작 명단을 읽지 못한 다음 주부터 순위에 오르지 않습니다.",
@@ -90,11 +90,11 @@ export const extraAnswers: Answer[] = [
       },
       en: {
         title: "What happens if our guild is renamed or disbanded?",
-        summary: "If the daily roster read can't find the guild, it's marked \"Guild not found\". It keeps its rank that week, scored from the week-start roster, drops out of the ranks from the next week, and all its map land becomes empty. A renamed guild added again under its new name is scored as a new guild.",
+        summary: "If the roster read at an update can't find the guild, it's marked \"Guild not found\". It keeps its rank that week, scored from the week-start roster, drops out of the ranks from the next week, and all its map land becomes empty. A renamed guild added again under its new name is scored as a new guild.",
         sections: [
           { h: "When does a guild show as not found?", p: [
-            "Rosters are read from the official API by the name the guild was registered with. If the name changed or the guild disbanded so no roster comes back, it shows as \"Guild not found\" from the next daily update at 08:00 Korea time.",
-            "Guilds that can't be found are still checked every day. If it was a passing problem, the guild returns to normal the day its roster is read again.",
+            "Rosters are read from the official API by the name the guild was registered with. If the name changed or the guild disbanded so no roster comes back, it shows as \"Guild not found\" from the next update (Monday or Thursday, 08:00 Korea time).",
+            "Guilds that can't be found are still checked at every update. If it was a passing problem, the guild returns to normal at the update that reads its roster again.",
           ] },
           { h: "What happens to its ranks and territory?", p: [
             "Scores come from the roster at the start of the week, so a guild that disbands mid-week keeps its rank that week. From the next week, when no week-start roster can be read, it isn't ranked.",
@@ -107,11 +107,11 @@ export const extraAnswers: Answer[] = [
       },
       "zh-tw": {
         title: "公會改名或解散會怎麼樣？",
-        summary: "每天讀取名單時找不到公會，就會改為「找不到公會」。當週以週初名單保留名次，下週起不再上榜，領土地圖上的土地全部變成無主之地。改名的公會用新名稱重新登記，會以新公會計分。",
+        summary: "定期更新讀取名單時找不到公會，就會改為「找不到公會」。當週以週初名單保留名次，下週起不再上榜，領土地圖上的土地全部變成無主之地。改名的公會用新名稱重新登記，會以新公會計分。",
         sections: [
           { h: "什麼時候會變成找不到？", p: [
-            "我們用登記時的名稱從官方 API 讀取公會名單。名稱改了或公會解散，用這個名稱讀不到名單時，從下次更新（每天 07:00，台灣時間）起顯示為「找不到公會」。",
-            "找不到的公會每天仍會再確認。如果只是暫時的問題，名單重新讀到的那天就會恢復原狀。",
+            "我們用登記時的名稱從官方 API 讀取公會名單。名稱改了或公會解散，用這個名稱讀不到名單時，從下次更新（週一或週四 07:00，台灣時間）起顯示為「找不到公會」。",
+            "找不到的公會每次更新仍會再確認。如果只是暫時的問題，名單重新讀到的那次更新就會恢復原狀。",
           ] },
           { h: "排名與領土會怎樣？", p: [
             "分數以一週開始時的名單計算。所以週中解散的公會當週仍保留名次，從讀不到週初名單的下一週起不再上榜。",
@@ -131,7 +131,7 @@ export const extraAnswers: Answer[] = [
     text: {
       ko: {
         title: "지역별 주간 초기화 시각은 언제인가요?",
-        summary: "Guild March의 새 주차는 4개 지역 모두 같은 순간인 목요일 08:00(한국 시간)에 시작합니다. 대만은 목요일 07:00, 유럽(중부)은 목요일 00:00, 미국 동부는 수요일 18:00, 미국 서부는 수요일 15:00입니다. 데이터는 매일 같은 시각에 한 번 갱신합니다.",
+        summary: "Guild March의 새 주차는 4개 지역 모두 같은 순간인 목요일 08:00(한국 시간)에 시작합니다. 대만은 목요일 07:00, 유럽(중부)은 목요일 00:00, 미국 동부는 수요일 18:00, 미국 서부는 수요일 15:00입니다. 데이터는 목요일과 월요일의 같은 시각에 갱신합니다.",
         sections: [
           { h: "지역별 초기화 시각은 몇 시인가요?", p: [
             "한국 목요일 08:00 = 대만 목요일 07:00 = 유럽(중부) 목요일 00:00 = 미국 동부 수요일 18:00 = 미국 서부 수요일 15:00. 협정 세계시로는 수요일 23:00입니다.",
@@ -142,13 +142,13 @@ export const extraAnswers: Answer[] = [
           ] },
           { h: "초기화 때 무슨 일이 일어나나요?", p: [
             "그 주가 마감되어 최종 순위, 등급, 배지가 정해지고, 영토 지도에서 진군이 일어납니다. 마감된 결과는 주차별 결과 페이지에 남습니다.",
-            "새 주차는 이때 길드에 있던 10레벨 이상 구성원으로 시작합니다. 새 주차의 첫 점수는 다음 날 갱신부터 보이고, 그때까지는 지난주 최종 순위를 보여 줍니다.",
+            "새 주차는 이때 길드에 있던 10레벨 이상 구성원으로 시작합니다. 새 주차의 첫 점수는 월요일 갱신부터 보이고, 그때까지는 지난주 최종 순위를 보여 줍니다.",
           ] },
         ],
       },
       en: {
         title: "When does the weekly reset happen in each region?",
-        summary: "A new Guild March week starts at the same moment in all four regions: Thursday 08:00 Korea time. That's Thursday 07:00 in Taiwan, Thursday 00:00 in Central Europe, Wednesday 18:00 US Eastern and Wednesday 15:00 US Pacific. Data refreshes once a day at the same time.",
+        summary: "A new Guild March week starts at the same moment in all four regions: Thursday 08:00 Korea time. That's Thursday 07:00 in Taiwan, Thursday 00:00 in Central Europe, Wednesday 18:00 US Eastern and Wednesday 15:00 US Pacific. Data refreshes on Thursday and Monday at the same time.",
         sections: [
           { h: "What time is the reset in each region?", p: [
             "Thursday 08:00 Korea = Thursday 07:00 Taiwan = Thursday 00:00 Central Europe = Wednesday 18:00 US Eastern = Wednesday 15:00 US Pacific, or Wednesday 23:00 UTC.",
@@ -159,13 +159,13 @@ export const extraAnswers: Answer[] = [
           ] },
           { h: "What happens at the reset?", p: [
             "The week closes: final ranks, tiers and badges are settled and the territory map marches. Closed results stay on the past weeks page.",
-            "The new week starts with the members in each guild at that moment who are level 10 or higher. Its first scores appear at the next daily update, and until then last week's final standings stay up.",
+            "The new week starts with the members in each guild at that moment who are level 10 or higher. Its first scores appear at Monday's update, and until then last week's final standings stay up.",
           ] },
         ],
       },
       "zh-tw": {
         title: "各地區的每週重置時間是什麼時候？",
-        summary: "Guild March 的新一週在四個地區的同一時刻開始：台灣時間週四 07:00。也就是韓國週四 08:00、歐洲（中部）週四 00:00、美國東部週三 18:00、美國西部週三 15:00。資料每天在同一時間更新一次。",
+        summary: "Guild March 的新一週在四個地區的同一時刻開始：台灣時間週四 07:00。也就是韓國週四 08:00、歐洲（中部）週四 00:00、美國東部週三 18:00、美國西部週三 15:00。資料在週四與週一的同一時間更新。",
         sections: [
           { h: "各地區的重置時間是幾點？", p: [
             "台灣週四 07:00 = 韓國週四 08:00 = 歐洲（中部）週四 00:00 = 美國東部週三 18:00 = 美國西部週三 15:00，換算成世界協調時間是週三 23:00。",
@@ -176,7 +176,7 @@ export const extraAnswers: Answer[] = [
           ] },
           { h: "重置時會發生什麼？", p: [
             "當週結算，確定最終排名、等級與徽章，領土地圖也會進軍。結算結果會保留在歷週結果頁面。",
-            "新的一週以當時在公會中、等級 10 以上的成員開始。新一週的第一個分數在隔天更新後才會出現，在那之前會顯示上週的最終排名。",
+            "新的一週以當時在公會中、等級 10 以上的成員開始。新一週的第一個分數在週一更新後才會出現，在那之前會顯示上週的最終排名。",
           ] },
         ],
       },
@@ -366,14 +366,14 @@ export const extraAnswers: Answer[] = [
     text: {
       ko: {
         title: "접속 중인 캐릭터의 점수가 반영되지 않아요",
-        summary: "게임에 접속 중인 캐릭터는 공식 API에서 조회되지 않습니다. 매일 08:00 갱신 때 접속 중이었다면 그날은 직전에 읽은 값을 쓰고, 로그아웃한 뒤 다음 갱신에 반영됩니다. 업적은 달성 시각으로 세므로 잃지 않습니다.",
+        summary: "게임에 접속 중인 캐릭터는 공식 API에서 조회되지 않습니다. 갱신(월·목요일 08:00) 때 접속 중이었다면 그 갱신에는 직전에 읽은 값을 쓰고, 로그아웃한 뒤 다음 갱신에 반영됩니다. 업적은 달성 시각으로 세므로 잃지 않습니다.",
         sections: [
           { h: "왜 늦게 반영되나요?", p: [
-            "Guild March는 하루 한 번, 08:00(한국 시간)에 Battle.net 공개 API로 캐릭터 정보를 읽습니다. 이때 게임에 접속 중인 캐릭터는 API가 정보를 돌려주지 않습니다.",
+            "Guild March는 월요일과 목요일 08:00(한국 시간)에 Battle.net 공개 API로 캐릭터 정보를 읽습니다. 이때 게임에 접속 중인 캐릭터는 API가 정보를 돌려주지 않습니다.",
             "읽지 못한 캐릭터는 마지막으로 읽은 값으로 계산합니다. 로그아웃한 상태로 다음 08:00을 맞으면 그때 올린 레벨과 명예 킬이 반영됩니다.",
           ] },
           { h: "잃는 점수가 있나요?", p: [
-            "업적은 달성한 시각으로 세므로, 하루 늦게 읽혀도 그 주에 달성한 업적은 그 주 점수에 들어갑니다.",
+            "업적은 달성한 시각으로 세므로, 늦게 읽혀도 그 주에 달성한 업적은 그 주 점수에 들어갑니다.",
             "레벨과 명예 킬은 주 시작 값과 마지막으로 읽은 값의 차이로 셉니다. 주가 마감되는 목요일 08:00에도 접속 중이었다면, 마감 뒤에 늘어난 몫은 다음 주 점수로 넘어갈 수 있습니다.",
           ] },
           { h: "확실히 반영되게 하려면 어떻게 하나요?", p: [
@@ -383,10 +383,10 @@ export const extraAnswers: Answer[] = [
       },
       en: {
         title: "Our logged-in character's progress isn't showing",
-        summary: "The official API doesn't return characters who are logged in. If a character is online at the 08:00 daily update, the last value read stands in that day, and its progress shows at the next update after logging out. Achievements count by when they were earned, so none are lost.",
+        summary: "The official API doesn't return characters who are logged in. If a character is online at an update (Monday or Thursday, 08:00), the last value read stands in for that update, and its progress shows at the next update after logging out. Achievements count by when they were earned, so none are lost.",
         sections: [
           { h: "Why does it show up late?", p: [
-            "Guild March reads characters from the public Battle.net API once a day at 08:00 Korea time. Characters logged in at that moment aren't returned.",
+            "Guild March reads characters from the public Battle.net API on Monday and Thursday at 08:00 Korea time. Characters logged in at that moment aren't returned.",
             "A character that can't be read is scored from the last value we read. Once it's logged out at the next 08:00 read, its new levels and honorable kills show up.",
           ] },
           { h: "Can points be lost?", p: [
@@ -400,10 +400,10 @@ export const extraAnswers: Answer[] = [
       },
       "zh-tw": {
         title: "正在遊戲中的角色分數沒有反映",
-        summary: "官方 API 查不到正在遊戲中的角色。如果每天 07:00（台灣時間）更新時角色在線上，當天會使用上一次讀到的數值，登出後的下次更新才會反映。成就以達成時間計算，所以不會遺漏。",
+        summary: "官方 API 查不到正在遊戲中的角色。如果週一或週四 07:00（台灣時間）更新時角色在線上，那次更新會使用上一次讀到的數值，登出後的下次更新才會反映。成就以達成時間計算，所以不會遺漏。",
         sections: [
           { h: "為什麼會晚一點反映？", p: [
-            "Guild March 每天 07:00（台灣時間）用 Battle.net 公開 API 讀取一次角色資料。這時正在遊戲中的角色，API 不會回傳資料。",
+            "Guild March 在週一與週四 07:00（台灣時間）用 Battle.net 公開 API 讀取角色資料。這時正在遊戲中的角色，API 不會回傳資料。",
             "讀不到的角色會用上一次讀到的數值計算。在登出狀態下迎接下一個 07:00，提升的等級與榮譽擊殺就會反映。",
           ] },
           { h: "會不會少算分數？", p: [
@@ -537,7 +537,7 @@ export const extraAnswers: Answer[] = [
     text: {
       ko: {
         title: "내 캐릭터를 순위에서 빼려면 어떻게 하나요?",
-        summary: "제외 요청 페이지에서 \"캐릭터 하나 빼기\"를 고르고 지역과 캐릭터 이름을 남기면 됩니다. 다음 갱신(매일 08:00)부터 순위와 길드 페이지에서 빠지고, 저장된 그 캐릭터의 정보는 모두 지웁니다. 로그인이나 연락처는 필요 없습니다.",
+        summary: "제외 요청 페이지에서 \"캐릭터 하나 빼기\"를 고르고 지역과 캐릭터 이름을 남기면 됩니다. 다음 갱신(월·목요일 08:00)부터 순위와 길드 페이지에서 빠지고, 저장된 그 캐릭터의 정보는 모두 지웁니다. 로그인이나 연락처는 필요 없습니다.",
         sections: [
           { h: "어떻게 요청하나요?", p: [
             "제외 요청 페이지에서 요청 종류로 \"캐릭터 하나 빼기\"를 고르고, 지역과 캐릭터 이름을 적어 보내면 됩니다. 이름만 받고 이메일 같은 연락처는 받지 않습니다.",
@@ -554,7 +554,7 @@ export const extraAnswers: Answer[] = [
       },
       en: {
         title: "How do I remove my character from the ranks?",
-        summary: "On the removal request page, choose \"Remove one character\" and leave the region and character name. It drops off the ranks and guild pages at the next daily update (08:00 Korea time), and everything stored about it is deleted. No login or contact details are needed.",
+        summary: "On the removal request page, choose \"Remove one character\" and leave the region and character name. It drops off the ranks and guild pages at the next update (Monday or Thursday, 08:00 Korea time), and everything stored about it is deleted. No login or contact details are needed.",
         sections: [
           { h: "How do I ask?", p: [
             "On the removal request page, choose \"Remove one character\" as the request and send the region and character name. We take the name only, never an email or other contact.",
@@ -571,7 +571,7 @@ export const extraAnswers: Answer[] = [
       },
       "zh-tw": {
         title: "要怎麼把我的角色從排名移除？",
-        summary: "在移除申請頁面選擇「移除一個角色」，留下地區與角色名稱即可。從下次更新（每天 07:00，台灣時間）起會從排名與公會頁面移除，並刪除已儲存的該角色所有資料。不需要登入，也不需要聯絡方式。",
+        summary: "在移除申請頁面選擇「移除一個角色」，留下地區與角色名稱即可。從下次更新（週一或週四 07:00，台灣時間）起會從排名與公會頁面移除，並刪除已儲存的該角色所有資料。不需要登入，也不需要聯絡方式。",
         sections: [
           { h: "要怎麼申請？", p: [
             "在移除申請頁面的申請類型選擇「移除一個角色」，填寫地區與角色名稱後送出即可。只收名稱，不收電子郵件等聯絡方式。",

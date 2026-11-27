@@ -7,6 +7,7 @@ import { TierIcon } from "@/components/TierIcon";
 import { FactionBanner } from "@/components/Versus";
 import { isLang, t, type Lang } from "@/lib/i18n";
 import { boards, factions, guildsSample, sideGuilds, sideIndexable, type Faction, type Region, type Ruleset } from "@/lib/data";
+import { populationLink } from "@/lib/population-link";
 import { pageMeta } from "@/lib/site";
 
 type Props = { params: Promise<{ lang: string; board: string; faction: string }> };
@@ -47,6 +48,7 @@ export default async function Side({ params }: Props) {
   const [r, s, f] = names(lang, p);
   const cards = sideGuilds(p.region, p.ruleset, p.faction);
   const other: Faction = p.faction === "horde" ? "alliance" : "horde";
+  const pop = populationLink(lang, p.region, p.ruleset);
 
   return (
     <SiteShell lang={lang} path={`/ranks/${board}/${faction}/`} scene="river-ford-camps">
@@ -108,6 +110,7 @@ export default async function Side({ params }: Props) {
           <ul>
             <li><Link href={`/${lang}/ranks/${board}/${other}/`}>{d.sideTitle(r, s, dict.join.factions[other])}</Link></li>
             <li><Link href={`/${lang}/ranks/${board}/`}>{d.title(r, s)}</Link></li>
+            {pop && <li><Link href={pop.href}>{pop.label}</Link></li>}
           </ul>
         </nav>
       </main>

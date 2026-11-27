@@ -7,6 +7,7 @@ import { Versus } from "@/components/Versus";
 import { isLang, t, updatedAt, type Lang } from "@/lib/i18n";
 import { regionNames } from "@/lib/map-regions";
 import { boardIndexable, boards, boardView, factions, isSample, lastRun, type Region, type Ruleset } from "@/lib/data";
+import { populationLink } from "@/lib/population-link";
 import { pageMeta } from "@/lib/site";
 
 type Props = { params: Promise<{ lang: string; board: string }> };
@@ -48,6 +49,7 @@ export default async function Board({ params }: Props) {
   const note = !v ? null : sample || run === null ? dict.rank.sample(w) : v.view.final ? dict.rank.final(w) : dict.rank.live(w, updatedAt(lang, run));
   const firstDay = !sample && run !== null && v?.view.firstDay;
   const places = regionNames(lang);
+  const pop = populationLink(lang, b.region, b.ruleset);
 
   return (
     <SiteShell lang={lang} path={`/ranks/${board}/`} scene="river-ford-camps">
@@ -109,6 +111,7 @@ export default async function Board({ params }: Props) {
                 <Link className={`faction-${f}`} href={`/${lang}/ranks/${board}/${f}/`}>{d.sideTitle(regionName, rulesetName, dict.join.factions[f])}</Link>
               </li>
             ))}
+            {pop && <li><Link href={pop.href}>{pop.label}</Link></li>}
           </ul>
         </nav>
 

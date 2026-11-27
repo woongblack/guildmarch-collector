@@ -9,7 +9,7 @@ type Props = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return isLang(lang) ? pageMeta(lang, "/register/", `${t(lang).registerPage.title} · ${t(lang).siteName}`, t(lang).meta.register) : {};
+  return isLang(lang) ? pageMeta(lang, "/register/", `${t(lang).meta.pageTitles.register} · ${t(lang).siteName}`, t(lang).meta.register) : {};
 }
 
 export default async function Register({ params }: Props) {

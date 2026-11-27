@@ -6,13 +6,11 @@ import { FactionSplit, pct } from "@/components/PopulationCharts";
 import { PageHead, SiteShell } from "@/components/SiteShell";
 import { isLang, locales, t, type Lang } from "@/lib/i18n";
 import { boards, factions, lastRun, population } from "@/lib/data";
+import { POP_MIN as MIN_CHARACTERS } from "@/lib/population-link";
 import { pageMeta, SITE_URL } from "@/lib/site";
 import type { PopulationGroup } from "@/lib/site-data";
 
 type Props = { params: Promise<{ lang: string; board: string }> };
-
-// Same floor as the main population page: below it one guild swings the numbers
-const MIN_CHARACTERS = 100;
 
 export const dynamicParams = false;
 

@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   if (!isLang(lang)) return {};
   const d = t(lang);
-  return pageMeta(lang, "/ranks/", `${d.boards.hubTitle} · ${d.siteName}`, d.boards.hubMeta, { noindex: !anyIndexable() });
+  return pageMeta(lang, "/ranks/", `${d.meta.pageTitles.ranks} · ${d.siteName}`, d.boards.hubMeta, { noindex: !anyIndexable() });
 }
 
 // The eight region and ruleset pages, grouped by region

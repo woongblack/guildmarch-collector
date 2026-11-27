@@ -122,8 +122,9 @@ async function collectRegion(sql: Sql, region: Region, tok: string) {
       ? await sql`
           insert into character ${sql(listed.map((c) => ({ region, blizzard_id: c.id, slug: c.slug, name: c.name, level: c.level, last_seen_at: runAt })))}
           on conflict (region, blizzard_id) do update
-            set slug = excluded.slug, name = excluded.name, last_seen_at = excluded.last_seen_at
-          returning id, blizzard_id, slug`
+            set slug = excluded.slug, name = excluded.name, last_seen_at = excluded.last_seen_at,
+              level = coalesce(excluded.level, character.level)
+          returning id, blizzard_id, slug, level`
       : [];
     const ids = chars.map((c) => c.id);
     // Membership by run time, so the scorer can rebuild the roster of any day
@@ -145,6 +146,12 @@ async function collectRegion(sql: Sql, region: Region, tok: string) {
     const snaps: Record<string, unknown>[] = [];
     const achievements: Record<string, unknown>[] = [];
     await pool(chars, WORKERS, async (c) => {
+      // Below level 10 the profile is private and always answers 404, and the roster already says
+      // the level, so the call is skipped and recorded as that 404 (R-49: about 12% of members)
+      if (c.level !== null && c.level < 10) {
+        snaps.push({ run_id: run.id, character_id: c.id, fetched_at: new Date(), http_status: 404, level: null, honorable_kills: null, last_login_at: null });
+        return;
+      }
       const base = `/profile/wow/character/${seg(c.slug)}`;
       const profile = await api.get(base);
       const p = profile.body;

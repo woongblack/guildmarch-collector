@@ -31,6 +31,8 @@ export type InsightTable = { head: string[]; rows: string[][] };
 export type Insight = {
   slug: string;
   date: string;
+  // Last edit to the text (the section headings became questions on 2026-11-24); the publish date stays
+  updated?: string;
   // Survey totals for the charts; guides written from the site's own data carry their numbers in the text
   file?: string;
   text: Record<Lang, { title: string; lead: string; description: string; method: string[]; sections: { h: string; p: string[]; chart?: "levels" | "factions" | "sizes"; table?: InsightTable }[]; close: string[] }>;
@@ -39,6 +41,7 @@ export type Insight = {
 export const insights: Insight[] = [
   {
     slug: "guild-survey-2026-11",
+    updated: "2026-11-24",
     date: "2026-11-15",
     file: "out-2026-11-15.json",
     text: {
@@ -53,16 +56,16 @@ export const insights: Insight[] = [
           "지금 한창 사람을 모으는 길드라 포에버 전체 평균보다 활발한 쪽으로 치우쳐 있을 수 있습니다.",
         ],
         sections: [
-          { h: "길드 크기: 생각보다 큽니다", chart: "sizes", p: ["명단 인원 중앙값은 54명입니다. 30곳 중 9곳이 출시 11일 만에 100명을 넘었고, 30명 미만은 7곳뿐입니다."] },
-          { h: "길드원 10명 중 9명이 일주일 안에 접속", p: ["명단의 88%가 최근 7일 안에, 83%가 최근 3일 안에 접속했습니다. 길드별로 보면 활동 비율 중앙값이 91%입니다.", "10레벨 미만 캐릭터는 프로필이 공개되지 않아 \"접속 안 함\"으로 셌기 때문에 실제 활동 비율은 조금 더 높습니다."] },
-          { h: "레벨: 20대가 가장 많고, 60은 아직 10명", chart: "levels", p: ["레벨 중앙값은 26입니다. 20~29레벨이 31%로 가장 많고, 40레벨 이상은 13%입니다. 60레벨에 도달한 캐릭터는 3,180명 중 10명(0.3%)입니다."] },
-          { h: "진영: 이 표본에서는 호드 길드가 더 큽니다", chart: "factions", p: ["길드 수는 호드와 얼라이언스가 15곳씩 같은데 명단 인원은 호드가 2,030명, 얼라이언스가 1,150명으로 호드가 1.8배입니다. 길드당 평균으로는 135명과 77명입니다.", "모집 글을 올린 길드 기준이라 서버 전체의 진영 비율과는 다를 수 있습니다."] },
-          { h: "PvP 서버와 일반 서버", p: ["PvP 서버 길드(21곳)는 최근 7일 접속한 길드원의 57%가 명예 킬을 1번 이상 기록했고 상위 10%는 18킬 이상입니다. 일반 서버 길드(5곳)는 10%만 명예 킬이 있습니다.", "아직 레벨 구간이라 PvP 서버도 명예 킬 중앙값은 1킬입니다. 본격적인 필드 쟁은 이제부터로 보입니다."] },
-          { h: "업적은 아직 조용합니다", p: ["캐릭터당 달성한 업적은 중앙값 2개, 상위 10%가 6개 이상입니다."] },
+          { h: "모집 중인 포에버 길드는 얼마나 큰가요?", chart: "sizes", p: ["명단 인원 중앙값은 54명입니다. 30곳 중 9곳이 출시 11일 만에 100명을 넘었고, 30명 미만은 7곳뿐입니다."] },
+          { h: "길드원은 실제로 얼마나 접속하나요?", p: ["명단의 88%가 최근 7일 안에, 83%가 최근 3일 안에 접속했습니다. 길드별로 보면 활동 비율 중앙값이 91%입니다.", "10레벨 미만 캐릭터는 프로필이 공개되지 않아 \"접속 안 함\"으로 셌기 때문에 실제 활동 비율은 조금 더 높습니다."] },
+          { h: "길드원은 몇 레벨이 가장 많나요?", chart: "levels", p: ["레벨 중앙값은 26입니다. 20~29레벨이 31%로 가장 많고, 40레벨 이상은 13%입니다. 60레벨에 도달한 캐릭터는 3,180명 중 10명(0.3%)입니다."] },
+          { h: "호드와 얼라이언스 중 어느 쪽 길드가 더 큰가요?", chart: "factions", p: ["길드 수는 호드와 얼라이언스가 15곳씩 같은데 명단 인원은 호드가 2,030명, 얼라이언스가 1,150명으로 호드가 1.8배입니다. 길드당 평균으로는 135명과 77명입니다.", "모집 글을 올린 길드 기준이라 서버 전체의 진영 비율과는 다를 수 있습니다."] },
+          { h: "PvP 서버와 일반 서버 길드는 무엇이 다른가요?", p: ["PvP 서버 길드(21곳)는 최근 7일 접속한 길드원의 57%가 명예 킬을 1번 이상 기록했고 상위 10%는 18킬 이상입니다. 일반 서버 길드(5곳)는 10%만 명예 킬이 있습니다.", "아직 레벨 구간이라 PvP 서버도 명예 킬 중앙값은 1킬입니다. 본격적인 필드 쟁은 이제부터로 보입니다."] },
+          { h: "업적은 얼마나 땄나요?", p: ["캐릭터당 달성한 업적은 중앙값 2개, 상위 10%가 6개 이상입니다."] },
         ],
         close: [
           "정리하면, 모집 중인 길드는 이미 크고 길드원 대부분이 매일같이 접속하며 레벨은 20~30대에 몰려 있습니다. 이 표본에서는 호드 길드 명단이 얼라이언스의 1.8배였습니다.",
-          "Guild March는 같은 공개 데이터로 등록 길드의 주간 점수를 매일 계산합니다. 첫 주차가 끝나면 등록 길드 전체를 대상으로 같은 숫자를 다시 보여 드리겠습니다.",
+          "Guild March는 같은 공개 데이터로 등록 길드의 주간 점수를 일주일에 두 번 계산합니다. 첫 주차가 끝나면 등록 길드 전체를 대상으로 같은 숫자를 다시 보여 드리겠습니다.",
         ],
       },
       en: {
@@ -76,16 +79,16 @@ export const insights: Insight[] = [
           "These are guilds busy recruiting, so they may be more active than Forever as a whole.",
         ],
         sections: [
-          { h: "Guild size: bigger than you'd think", chart: "sizes", p: ["The median roster is 54. Nine of the 30 guilds passed 100 members in 11 days; only seven have fewer than 30."] },
-          { h: "Nine in ten members played this week", p: ["88% of roster members logged in within the last 7 days, 83% within 3 days. By guild, the median active share is 91%.", "Characters under level 10 have no public profile and were counted as not playing, so real activity is a little higher."] },
-          { h: "Levels: most are in their 20s, ten have reached 60", chart: "levels", p: ["The median level is 26. Levels 20 to 29 are the largest group at 31%, and 13% are level 40 or higher. Ten of the 3,180 characters (0.3%) have reached 60."] },
-          { h: "Factions: Horde guilds are larger in this sample", chart: "factions", p: ["There are 15 guilds on each side, but Horde rosters hold 2,030 characters against 1,150 for the Alliance: 1.8 times as many, or 135 against 77 per guild.", "These are recruiting guilds only, so the realm-wide split may differ."] },
-          { h: "PvP realms and normal realms", p: ["On PvP realms (21 guilds), 57% of the members active this week have at least one honor kill, and the top 10% have 18 or more. On normal realms (5 guilds), only 10% do.", "Everyone is still leveling, so even on PvP realms the median is one kill. World PvP seems to be just starting."] },
-          { h: "Achievements are still quiet", p: ["The median character has 2 achievements; the top 10% have 6 or more."] },
+          { h: "How big are recruiting WoW Forever guilds?", chart: "sizes", p: ["The median roster is 54. Nine of the 30 guilds passed 100 members in 11 days; only seven have fewer than 30."] },
+          { h: "How many guild members actually play each week?", p: ["88% of roster members logged in within the last 7 days, 83% within 3 days. By guild, the median active share is 91%.", "Characters under level 10 have no public profile and were counted as not playing, so real activity is a little higher."] },
+          { h: "What level are most guild members?", chart: "levels", p: ["The median level is 26. Levels 20 to 29 are the largest group at 31%, and 13% are level 40 or higher. Ten of the 3,180 characters (0.3%) have reached 60."] },
+          { h: "Are Horde or Alliance guilds bigger?", chart: "factions", p: ["There are 15 guilds on each side, but Horde rosters hold 2,030 characters against 1,150 for the Alliance: 1.8 times as many, or 135 against 77 per guild.", "These are recruiting guilds only, so the realm-wide split may differ."] },
+          { h: "How do PvP and normal realm guilds differ?", p: ["On PvP realms (21 guilds), 57% of the members active this week have at least one honor kill, and the top 10% have 18 or more. On normal realms (5 guilds), only 10% do.", "Everyone is still leveling, so even on PvP realms the median is one kill. World PvP seems to be just starting."] },
+          { h: "How many achievements have players earned?", p: ["The median character has 2 achievements; the top 10% have 6 or more."] },
         ],
         close: [
           "In short: recruiting guilds are already large, most members play almost daily, and levels cluster in the 20s and 30s. In this sample, Horde rosters were 1.8 times the Alliance's.",
-          "Guild March scores registered guilds every day from the same public data. After week one closes, we'll show these numbers again for every registered guild.",
+          "Guild March scores registered guilds twice a week from the same public data. After week one closes, we'll show these numbers again for every registered guild.",
         ],
       },
       "zh-tw": {
@@ -99,16 +102,16 @@ export const insights: Insight[] = [
           "這些是正在積極招募的公會，可能比 Forever 整體更活躍。",
         ],
         sections: [
-          { h: "公會規模：比想像中大", chart: "sizes", p: ["名單人數中位數為 54 人。30 個公會中有 9 個在開服 11 天內就超過 100 人，不到 30 人的只有 7 個。"] },
-          { h: "十個成員中有九個本週有上線", p: ["名單上 88% 的角色在近 7 天內上線，83% 在近 3 天內上線。以公會來看，活躍比例中位數為 91%。", "10 級以下角色沒有公開資料，被算作未上線，因此實際活躍比例會再高一些。"] },
-          { h: "等級：20 多級最多，60 級目前 10 人", chart: "levels", p: ["等級中位數為 26。20～29 級最多，佔 31%，40 級以上佔 13%。3,180 名角色中有 10 名（0.3%）達到 60 級。"] },
-          { h: "陣營：在這個樣本中部落公會較大", chart: "factions", p: ["部落與聯盟各有 15 個公會，但名單人數部落 2,030 人、聯盟 1,150 人，部落是 1.8 倍；平均每個公會為 135 人與 77 人。", "這只是正在招募的公會，伺服器整體的陣營比例可能不同。"] },
-          { h: "PvP 伺服器與一般伺服器", p: ["PvP 伺服器公會（21 個）中，本週有上線的成員有 57% 至少有 1 次榮譽擊殺，前 10% 在 18 次以上。一般伺服器公會（5 個）只有 10%。", "大家都還在練等，PvP 伺服器的中位數也只有 1 次。野外 PvP 看來才剛開始。"] },
-          { h: "成就還很安靜", p: ["每個角色達成的成就中位數為 2 個，前 10% 為 6 個以上。"] },
+          { h: "招募中的 Forever 公會有多大？", chart: "sizes", p: ["名單人數中位數為 54 人。30 個公會中有 9 個在開服 11 天內就超過 100 人，不到 30 人的只有 7 個。"] },
+          { h: "公會成員實際上有多少人上線？", p: ["名單上 88% 的角色在近 7 天內上線，83% 在近 3 天內上線。以公會來看，活躍比例中位數為 91%。", "10 級以下角色沒有公開資料，被算作未上線，因此實際活躍比例會再高一些。"] },
+          { h: "公會成員大多是幾級？", chart: "levels", p: ["等級中位數為 26。20～29 級最多，佔 31%，40 級以上佔 13%。3,180 名角色中有 10 名（0.3%）達到 60 級。"] },
+          { h: "部落和聯盟哪邊的公會比較大？", chart: "factions", p: ["部落與聯盟各有 15 個公會，但名單人數部落 2,030 人、聯盟 1,150 人，部落是 1.8 倍；平均每個公會為 135 人與 77 人。", "這只是正在招募的公會，伺服器整體的陣營比例可能不同。"] },
+          { h: "PvP 和一般伺服器的公會有什麼不同？", p: ["PvP 伺服器公會（21 個）中，本週有上線的成員有 57% 至少有 1 次榮譽擊殺，前 10% 在 18 次以上。一般伺服器公會（5 個）只有 10%。", "大家都還在練等，PvP 伺服器的中位數也只有 1 次。野外 PvP 看來才剛開始。"] },
+          { h: "玩家拿到了多少成就？", p: ["每個角色達成的成就中位數為 2 個，前 10% 為 6 個以上。"] },
         ],
         close: [
           "總結：正在招募的公會已經很大，大多數成員幾乎每天上線，等級集中在 20～30 多級。在這個樣本中，部落公會名單是聯盟的 1.8 倍。",
-          "Guild March 每天用同樣的公開資料為已登錄公會計分。第一週結算後，我們會以所有登錄公會再整理一次這些數字。",
+          "Guild March 每週兩次用同樣的公開資料為已登錄公會計分。第一週結算後，我們會以所有登錄公會再整理一次這些數字。",
         ],
       },
     },

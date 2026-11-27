@@ -5,6 +5,7 @@ import { RegionPanel, RegionProvider, RegionTabs } from "@/components/RegionTabs
 import { PageHead, SiteShell } from "@/components/SiteShell";
 import { Versus } from "@/components/Versus";
 import { isLang, locales, t } from "@/lib/i18n";
+import { populationLink } from "@/lib/population-link";
 import { pageMeta } from "@/lib/site";
 import { factionTerritory, factionView, isSample, population, rulesets, shownRegions, type FactionWeek, type Region } from "@/lib/data";
 
@@ -12,7 +13,7 @@ type Props = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return isLang(lang) ? pageMeta(lang, "/factions/", `${t(lang).factionsPage.title} · ${t(lang).siteName}`, t(lang).meta.factions) : {};
+  return isLang(lang) ? pageMeta(lang, "/factions/", `${t(lang).meta.pageTitles.factions} · ${t(lang).siteName}`, t(lang).meta.factions) : {};
 }
 
 export default async function Factions({ params }: Props) {
@@ -51,6 +52,14 @@ export default async function Factions({ params }: Props) {
                     </div>
                   </section>
                 ))}
+                {(() => {
+                  const pops = rulesets.map((r) => populationLink(lang, region, r)).filter((x) => x !== null);
+                  return pops.length > 0 && (
+                    <ul className="board-links-inline">
+                      {pops.map((x) => <li key={x.href}><Link href={x.href}>{x.label}</Link></li>)}
+                    </ul>
+                  );
+                })()}
               </RegionPanel>
             );
           })}

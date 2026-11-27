@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   if (!isLang(lang)) return {};
   const d = t(lang);
-  return pageMeta(lang, "/insights/", `${d.insights.title} · ${d.siteName}`, d.insights.meta);
+  return pageMeta(lang, "/insights/", `${d.meta.pageTitles.insights} · ${d.siteName}`, d.insights.meta);
 }
 
 // All data reports, newest first

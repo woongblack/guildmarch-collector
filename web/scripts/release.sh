@@ -18,11 +18,17 @@ esac
 # (The slim image has no curl, so node fetches it.)
 mkdir -p data
 node -e 'fetch(process.argv[1], { signal: AbortSignal.timeout(20000) }).then((r) => r.ok ? r.text() : Promise.reject(r.status)).then((t) => require("fs").writeFileSync("data/yesterday.json", t)).catch((e) => { console.log("no yesterday summary:", e); require("fs").rmSync("data/yesterday.json", { force: true }); })' "${SITE_URL:-https://guildmarch.com}/data/today.json"
+# The live sitemap, so pipeline/indexnow.ts can tell search engines only what this deploy changed
+node -e 'fetch(process.argv[1], { signal: AbortSignal.timeout(20000) }).then((r) => r.ok ? r.text() : Promise.reject(r.status)).then((t) => require("fs").writeFileSync("data/live-sitemap.xml", t)).catch((e) => { console.log("no live sitemap:", e); require("fs").rmSync("data/live-sitemap.xml", { force: true }); })' "${SITE_URL:-https://guildmarch.com}/sitemap.xml"
 
 npm run build
 
 if [ -n "${CLOUDFLARE_API_TOKEN:-}" ]; then
   npx wrangler pages deploy out --project-name "$PAGES_PROJECT" --branch "${PAGES_BRANCH:-main}" --commit-dirty=true
+  # New and changed pages to Bing, Naver and the other IndexNow engines. Production only.
+  if [ "${PAGES_BRANCH:-main}" = "main" ]; then
+    node pipeline/indexnow.ts || echo "indexnow: failed"
+  fi
   # R-39: the weekly Discord posts, once the pages they link to are live. Never fails the update.
   if [ "${PIPELINE:-}" = "daily" ]; then
     node pipeline/daily.ts discord || echo "discord: posts failed"

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // R-36, brought forward for search (2026-11-19): the current members of registered guilds, counted
-// every day, so the page has real numbers before the first week closes
+// at each update, so the page has real numbers before the first week closes
 export default async function Population({ params }: Props) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { populationLink } from "@/lib/population-link";
 import { notFound } from "next/navigation";
 import { BadgeIcon } from "@/components/BadgeIcon";
 import { ChronicleList } from "@/components/Chronicle";
@@ -60,6 +61,7 @@ export default async function GuildPage({ params }: Props) {
   const near = guildNeighbours(g.id);
   const where = `${j.regions[g.region]} ${j.rulesets[g.ruleset]}`;
   const side = `${where} ${j.factions[g.faction]}`;
+  const pop = populationLink(lang, g.region, g.ruleset);
   // The About text: who the guild is, how its week is going, its levels, where the points came from
   const about = [
     [
@@ -240,6 +242,7 @@ export default async function GuildPage({ params }: Props) {
           )}
           <p className="finder-foot">
             <Link href={`/${lang}/ranks/${g.region}-${g.ruleset}/${g.faction}/`}>{a.sideAll(side)}</Link>
+            {pop && <> · <Link href={pop.href}>{pop.label}</Link></>}
           </p>
         </section>
 

@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   if (!isLang(lang)) return {};
   const d = t(lang);
-  return pageMeta(lang, "/answers/", `${d.answers.title} · ${d.siteName}`, d.answers.meta);
+  return pageMeta(lang, "/answers/", `${d.meta.pageTitles.answers} · ${d.siteName}`, d.answers.meta);
 }
 
 export default async function Answers({ params }: Props) {

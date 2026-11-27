@@ -14,7 +14,7 @@ type Props = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return isLang(lang) ? pageMeta(lang, "/guide/", `${t(lang).guidePage.title} · ${t(lang).siteName}`, t(lang).meta.guide) : {};
+  return isLang(lang) ? pageMeta(lang, "/guide/", `${t(lang).meta.pageTitles.guide} · ${t(lang).siteName}`, t(lang).meta.guide) : {};
 }
 
 // The whole rulebook on one parchment page, so it reads like the quest log on the landing

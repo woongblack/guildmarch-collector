@@ -4,6 +4,7 @@ import { insights } from "@/lib/insights";
 import { reportList, reportNotes } from "@/lib/report";
 import { guildsSample, population, boardIndexable, boards, closedWeeks, factions, guildIds, guildIndexable, isSample, lastRun, placeIndexable, sideIndexable } from "@/lib/data";
 import { terms } from "@/lib/glossary";
+import { POP_MIN } from "@/lib/population-link";
 import { tierSlugs } from "@/lib/league";
 import { regionSlugs } from "@/lib/map-regions";
 import { langs } from "@/lib/i18n";
@@ -41,8 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const data = [
     "/", "/guilds/", "/map/", "/factions/",
     ...(guildsSample() ? [] : ["/characters/"]),
-    ...(population().some((g) => g.characters >= 100) ? ["/population/"] : []),
-    ...population().filter((g) => g.characters >= 100).map((g) => `/population/${g.region}-${g.ruleset}/`),
+    ...(population().some((g) => g.characters >= POP_MIN) ? ["/population/"] : []),
+    ...population().filter((g) => g.characters >= POP_MIN).map((g) => `/population/${g.region}-${g.ruleset}/`),
     ...(reportList().length && !isSample() ? ["/reports/", ...reports] : []),
     ...(ranked.length ? ["/ranks/", ...ranked] : []),
     ...(weeks.length ? ["/weeks/", ...weeks] : []),
@@ -61,8 +62,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return [
     ...data.map((p) => entry(p, run)),
-    ...entry("/insights/", newest(insights.map((x) => x.date))),
-    ...insights.map((x) => entry(`/insights/${x.slug}/`, new Date(x.date))),
+    ...entry("/insights/", newest(insights.map((x) => x.updated ?? x.date))),
+    ...insights.map((x) => entry(`/insights/${x.slug}/`, new Date(x.updated ?? x.date))),
     ...entry("/answers/", newest(answers.map((a) => a.updated))),
     ...answers.map((a) => entry(`/answers/${a.slug}/`, new Date(a.updated))),
     ...fixed.map((p) => entry(p)),

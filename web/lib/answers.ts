@@ -15,7 +15,7 @@ const firstAnswers: Answer[] = [
     text: {
       ko: {
         title: "WoW 포에버 길드 순위는 어떻게 정하나요?",
-        summary: "한 주 동안 길드원이 올린 레벨, 업적, 명예 킬을 점수로 바꾸고, 활동 인원으로 소·중·대 리그를 나눈 뒤 리그 안에서 활동 인원당 점수로 순위를 매깁니다. 주는 목요일 08:00(한국 시간)에 시작하고, 순위는 매일 08:00에 갱신합니다.",
+        summary: "한 주 동안 길드원이 올린 레벨, 업적, 명예 킬을 점수로 바꾸고, 활동 인원으로 소·중·대 리그를 나눈 뒤 리그 안에서 활동 인원당 점수로 순위를 매깁니다. 주는 목요일 08:00(한국 시간)에 시작하고, 순위는 월·목요일 08:00에 갱신합니다.",
         sections: [
           { h: "무엇이 점수가 되나요?", p: [
             "레벨 1을 올릴 때마다 1점(캐릭터당 주 20점까지), 60레벨에 닿으면 10점(캐릭터당 한 번), 업적 하나에 5점(상한 없음), 명예 킬 10회에 1점(캐릭터당 주 10점까지)입니다.",
@@ -31,14 +31,14 @@ const firstAnswers: Answer[] = [
             "한 지역의 PvP 서버와 일반 서버 길드는 같은 리그에서 겨룹니다. 영토 지도만 룰셋마다 따로입니다.",
           ] },
           { h: "순위는 언제 바뀌나요?", p: [
-            "매일 08:00(한국 시간)에 공개 데이터를 한 번 읽어 순위를 다시 계산합니다. 게임에 접속 중인 캐릭터는 로그아웃한 뒤에 반영됩니다.",
+            "월요일과 목요일 08:00(한국 시간)에 공개 데이터를 읽어 순위를 다시 계산합니다. 목요일은 주간 마감, 월요일은 중간 집계입니다. 게임에 접속 중인 캐릭터는 로그아웃한 뒤에 반영됩니다.",
             "목요일 08:00에 그 주가 마감되고 새 주차가 시작됩니다. 마감된 주의 결과는 주차별 결과 페이지에 그대로 남습니다.",
           ] },
         ],
       },
       en: {
         title: "How are WoW: Forever guilds ranked?",
-        summary: "Levels, achievements and honorable kills your members earn in a week are turned into points. Guilds are split into small, medium and large leagues by active members, and ranked within their league by points per active member. Weeks start on Thursday at 08:00 Korea time and ranks update every day at 08:00.",
+        summary: "Levels, achievements and honorable kills your members earn in a week are turned into points. Guilds are split into small, medium and large leagues by active members, and ranked within their league by points per active member. Weeks start on Thursday at 08:00 Korea time and ranks update on Monday and Thursday at 08:00.",
         sections: [
           { h: "What earns points?", p: [
             "1 point per level gained (up to 20 per character a week), 10 for reaching level 60 (once per character), 5 per achievement (no limit) and 1 per 10 honorable kills (up to 10 per character a week).",
@@ -54,14 +54,14 @@ const firstAnswers: Answer[] = [
             "PvP and Normal realm guilds of the same region share the leagues. Only the territory maps are split by ruleset.",
           ] },
           { h: "When do the ranks change?", p: [
-            "The public data is read once a day at 08:00 Korea time and the ranks are worked out again. Characters who are logged in show up after they log out.",
+            "The public data is read on Monday and Thursday at 08:00 Korea time and the ranks are worked out again: Thursday is the weekly close, Monday the mid-week standings. Characters who are logged in show up after they log out.",
             "On Thursday at 08:00 the week closes and a new one starts. Closed weeks stay on the past weeks page as they ended.",
           ] },
         ],
       },
       "zh-tw": {
         title: "WoW: Forever 公會排名是怎麼決定的？",
-        summary: "把公會成員一週內提升的等級、完成的成就與榮譽擊殺換算成分數，依活躍人數分成小型、中型、大型組，再在組內以每位活躍成員的平均分數排名。每週從週四 07:00（台灣時間）開始，排名每天 07:00 更新。",
+        summary: "把公會成員一週內提升的等級、完成的成就與榮譽擊殺換算成分數，依活躍人數分成小型、中型、大型組，再在組內以每位活躍成員的平均分數排名。每週從週四 07:00（台灣時間）開始，排名在週一與週四 07:00 更新。",
         sections: [
           { h: "哪些行為會得分？", p: [
             "每提升 1 級得 1 分（每個角色每週最多 20 分），達到 60 級得 10 分（每個角色 1 次），每個成就得 5 分（無上限），每 10 次榮譽擊殺得 1 分（每個角色每週最多 10 分）。",
@@ -77,7 +77,7 @@ const firstAnswers: Answer[] = [
             "同一地區的 PvP 伺服器與一般伺服器公會在同一組內競賽，只有領土地圖依規則分開。",
           ] },
           { h: "排名什麼時候更新？", p: [
-            "每天 07:00（台灣時間）讀取一次公開資料並重新計算排名。正在遊戲中的角色會在登出後才反映。",
+            "每週一與週四 07:00（台灣時間）讀取公開資料並重新計算排名。週四是每週結算，週一是週中排名。正在遊戲中的角色會在登出後才反映。",
             "週四 07:00 結算當週並開始新的一週。結算後的結果會原樣保留在歷週結果頁面。",
           ] },
         ],
@@ -371,7 +371,7 @@ const firstAnswers: Answer[] = [
         summary: "길드 페이지 주소를 모집 글에 붙이고, 리그 순위와 등급, 지역 영주 칭호를 한 줄로 적으면 됩니다. 기록은 공개 게임 데이터로 계산하므로 읽는 사람이 직접 확인할 수 있습니다.",
         sections: [
           { h: "우리 길드 페이지는 어디 있나요?", p: [
-            "길드를 등록하면 다음 갱신(매일 08:00) 때 길드 페이지가 생깁니다. 길드 찾기에서 이름으로 찾아 주소를 복사하세요.",
+            "길드를 등록하면 다음 갱신(월·목요일 08:00) 때 길드 페이지가 생깁니다. 길드 찾기에서 이름으로 찾아 주소를 복사하세요.",
             "첫 주차 점수가 나오기 전에는 \"첫 주차 시작 전\"과 현재 명단 인원만 보입니다. 순위와 등급은 첫 주차부터 쌓입니다.",
           ] },
           { h: "모집 글에는 뭐라고 적으면 되나요?", p: [
@@ -388,7 +388,7 @@ const firstAnswers: Answer[] = [
         summary: "Paste your guild page's address into the post and add one line with your league rank, tier and region lord titles. The record is worked out from public game data, so readers can check it themselves.",
         sections: [
           { h: "Where is our guild page?", p: [
-            "Once a guild is added, its page appears at the next daily update (08:00 Korea time). Find it by name under Find a guild and copy the address.",
+            "Once a guild is added, its page appears at the next update (Monday or Thursday, 08:00 Korea time). Find it by name under Find a guild and copy the address.",
             "Until week one is scored, the page shows \"Before week one\" and the current roster only. Ranks and tiers build up from week one.",
           ] },
           { h: "What should the post say?", p: [
@@ -405,7 +405,7 @@ const firstAnswers: Answer[] = [
         summary: "把公會頁面的網址貼到招募文中，再用一行寫出組內名次、等級與地區領主稱號即可。紀錄是用公開遊戲資料計算的，讀者可以自己確認。",
         sections: [
           { h: "我們的公會頁面在哪裡？", p: [
-            "登記公會後，下次更新（每天 07:00，台灣時間）時就會產生公會頁面。在「尋找公會」用名稱找到後複製網址。",
+            "登記公會後，下次更新（週一或週四 07:00，台灣時間）時就會產生公會頁面。在「尋找公會」用名稱找到後複製網址。",
             "第一週分數出來之前，頁面只會顯示「第一週開始前」和目前名單人數。名次與等級從第一週開始累積。",
           ] },
           { h: "招募文要寫什麼？", p: [

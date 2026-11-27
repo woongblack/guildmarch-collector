@@ -11,7 +11,7 @@ type Props = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return isLang(lang) ? pageMeta(lang, "/guilds/", `${t(lang).guilds.title} · ${t(lang).siteName}`, t(lang).meta.guilds) : {};
+  return isLang(lang) ? pageMeta(lang, "/guilds/", `${t(lang).meta.pageTitles.guilds} · ${t(lang).siteName}`, t(lang).meta.guilds) : {};
 }
 
 export default async function Guilds({ params }: Props) {

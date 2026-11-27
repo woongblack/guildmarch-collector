@@ -21,7 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const x = insightBySlug(slug);
   if (!isLang(lang) || !x) return {};
   const text = x.text[lang];
-  return pageMeta(lang, `/insights/${slug}/`, `${text.title} · ${t(lang).siteName}`, text.description);
+  return pageMeta(lang, `/insights/${slug}/`, `${text.title} · ${t(lang).siteName}`, text.description, {
+    image: `/og/${lang}/insights/${slug}.jpg`,
+    article: { published: x.date, modified: x.updated },
+  });
 }
 
 // A data report (owner's choice: content on the site, not forum posts)
@@ -37,15 +40,26 @@ export default async function InsightPage({ params }: Props) {
   const date = new Intl.DateTimeFormat(locales[lang].intl, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(x.date));
   const ld = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: text.title,
-    description: text.description,
-    inLanguage: locales[lang].hreflang,
-    datePublished: x.date,
-    dateModified: x.date,
-    mainEntityOfPage: url,
-    author: { "@id": `${SITE_URL}/#org` },
-    publisher: { "@id": `${SITE_URL}/#org` },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: text.title,
+        description: text.description,
+        inLanguage: locales[lang].hreflang,
+        datePublished: x.date,
+        dateModified: x.updated ?? x.date,
+        image: `${SITE_URL}/og/${lang}/insights/${slug}.jpg`,
+        mainEntityOfPage: url,
+        author: { "@id": `${SITE_URL}/#org` },
+        publisher: { "@id": `${SITE_URL}/#org` },
+      },
+      // Each section heading is a question and its paragraphs the answer, as on the answer pages (R-48)
+      {
+        "@type": "FAQPage",
+        inLanguage: locales[lang].hreflang,
+        mainEntity: text.sections.map((s) => ({ "@type": "Question", name: s.h, acceptedAnswer: { "@type": "Answer", text: s.p.join(lang === "zh-tw" ? "" : " ") } })),
+      },
+    ],
   };
 
   return (

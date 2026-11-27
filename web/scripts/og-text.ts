@@ -3,6 +3,7 @@
 import { answers, categoryOf } from "../lib/answers.ts";
 import { terms } from "../lib/glossary.ts";
 import { langs, t } from "../lib/i18n.ts";
+import { insights } from "../lib/insights.ts";
 import { RULES, tierSlugs } from "../lib/league.ts";
 import { regionNames, regionSlugs } from "../lib/map-regions.ts";
 import { marchesFor } from "../lib/territory.ts";
@@ -14,7 +15,7 @@ const out = Object.fromEntries(langs.map((lang) => {
   return [lang, {
     siteName: d.siteName,
     tagline: d.meta.homeTitle.split(" — ")[1],
-    kickers: { answers: d.answers.title, glossary: d.glossaryPage.title, tiers: d.honors.tiersTitle, badges: d.honors.badgesTitle, map: d.mapPage.title },
+    kickers: { answers: d.answers.title, glossary: d.glossaryPage.title, tiers: d.honors.tiersTitle, badges: d.honors.badgesTitle, map: d.mapPage.title, insights: d.insights.title },
     tiers: tierSlugs.map((slug, i) => ({
       slug,
       name: d.tiers.names[i],
@@ -25,6 +26,7 @@ const out = Object.fromEntries(langs.map((lang) => {
       ...d.mapPage.seasonRewards.map((r) => ({ id: r.id, name: r.name, sub: r.rule })),
     ],
     answers: answers.map((a) => ({ slug: a.slug, title: a.text[lang].title, category: categoryOf(a.slug) })),
+    insights: insights.map((x) => ({ slug: x.slug, title: x.text[lang].title })),
     terms: terms.map((x) => ({ slug: x.slug, title: x.text[lang].term, sub: x.text[lang].short })),
     regions: regionNames(lang).map((name, i) => ({ slug: regionSlugs[i], name })),
   }];

@@ -12,7 +12,7 @@ type Props = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  return isLang(lang) ? pageMeta(lang, "/map/", `${t(lang).mapPage.title} · ${t(lang).siteName}`, t(lang).meta.map) : {};
+  return isLang(lang) ? pageMeta(lang, "/map/", `${t(lang).meta.pageTitles.map} · ${t(lang).siteName}`, t(lang).meta.map) : {};
 }
 
 export default async function MapPage({ params }: Props) {

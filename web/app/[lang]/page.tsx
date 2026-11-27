@@ -12,6 +12,7 @@ import { RegionPanel, RegionProvider, RegionTabs } from "@/components/RegionTabs
 import { SiteShell } from "@/components/SiteShell";
 import { isLang, locales, t, updatedAt } from "@/lib/i18n";
 import { insights } from "@/lib/insights";
+import { answerBySlug } from "@/lib/answers";
 import { pageMeta } from "@/lib/site";
 import { isSample, lastRun, rankView, shownRegions, type Region } from "@/lib/data";
 
@@ -41,6 +42,8 @@ export default async function Landing({ params }: { params: Promise<{ lang: stri
   };
   // The newest reports, so the guides are one click from the home page
   const reports = [...insights].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+  // The questions people search for most, linked from the home page so they're found and crawled first
+  const questions = ["how-ranking-works", "small-guild-chance", "pvp-vs-normal-realms", "territory-map"].map(answerBySlug).filter((x) => x !== null);
   // The landing alternates between the two widest battle scenes, one per week
   const scene = week % 2 ? "fortress-gate-assault" : "valley-guild-war";
 
@@ -139,6 +142,18 @@ export default async function Landing({ params }: { params: Promise<{ lang: stri
             ))}
           </ul>
           <Link className="link-quiet" href={`/${lang}/insights/`}>{d.insights.all} →</Link>
+        </section>
+
+        <section className="home-reports home-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">{d.answers.homeKicker}</h2>
+          <ul>
+            {questions.map((x) => (
+              <li key={x.slug}>
+                <Link href={`/${lang}/answers/${x.slug}/`}>{x.text[lang].title}</Link>
+              </li>
+            ))}
+          </ul>
+          <Link className="link-quiet" href={`/${lang}/answers/`}>{d.answers.all} →</Link>
         </section>
 
         <section className="frame join" id="join" aria-labelledby="join-title">
